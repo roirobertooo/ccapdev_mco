@@ -7,7 +7,7 @@ import {FaChevronDown} from "react-icons/fa6";
 import {FaUserCircle} from "react-icons/fa";
 import {MdAddBusiness, MdVerifiedUser} from "react-icons/md";
 
-export default function Business() {
+export default function BusinessDropdown() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement | null>(null);
 

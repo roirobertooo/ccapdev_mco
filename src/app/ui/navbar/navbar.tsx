@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import Business from "@/app/(pages)/(registration)/(business)/business";
+import BusinessDropdown from "@/app/ui/business/business-dropdown";
 
 export default function Navbar() {
     return (
@@ -22,7 +22,7 @@ export default function Navbar() {
                 </div>
 
                 <div className='flex gap-10 items-center'>
-                    <Business/>
+                    <BusinessDropdown />
 
                     <Link href="/login" className='font-bold'>Login</Link>
                     <Link href="/signup" className='
