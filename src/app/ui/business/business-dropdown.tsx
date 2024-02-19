@@ -31,7 +31,8 @@ export default function BusinessDropdown() {
                                 rounded-md border border-gray-300 shadow-sm px-4 py-2
                                 bg-white text-sm font-medium text-black
                                 hover:bg-gray-100
-                                focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-brandYellow'>
+                                focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-brandYellow
+                                transition ease-linear duration-200'>
                 For Business
                 <FaChevronDown size="0.7em"/>
             </button>
