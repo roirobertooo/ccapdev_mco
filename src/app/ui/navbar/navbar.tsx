@@ -22,7 +22,7 @@ export default function Navbar() {
                 </div>
 
                 <div className='flex gap-10 items-center'>
-                    <BusinessDropdown />
+                    <BusinessDropdown/>
 
                     <Link href="/login" className='font-bold'>Login</Link>
                     <Link href="/signup" className='
