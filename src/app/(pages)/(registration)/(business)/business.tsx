@@ -40,19 +40,19 @@ export default function Business() {
                 <div
                     className="origin-top-right absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                     <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                        <Link href="/addBusiness"
+                        <Link href="/add_a_business"
                               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                               role="menuitem">
                             <MdAddBusiness size="1.2em" className="inline-block ml-0.5 -mt-1 mr-2"/>
                             Add a Business
                         </Link>
-                        <Link href="/claimBusiness"
+                        <Link href="/claim_a_business"
                               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                               role="menuitem">
                             <MdVerifiedUser size="1.1em" className="inline-block -mt-1 mr-2.5"/>
                             Claim a Business
                         </Link>
-                        <Link href="/loginToBusiness"
+                        <Link href="/login_to_business"
                               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                               role="menuitem">
                             <FaUserCircle size="1.1em" className="inline-block -mt-1 mr-3"/>

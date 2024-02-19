@@ -1,9 +1,9 @@
-// TODO: Claim Business Page
+// TODO: Add a Business Page
 
 export default function Page() {
     return (
         <div>
-            <h1>Claim Business Page</h1>
+            <h1>Add a Business Page</h1>
         </div>
     );
 }
