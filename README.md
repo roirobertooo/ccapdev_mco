@@ -1,3 +1,6 @@
+[//]: # (TODO: Change description for project here. Should contain instructions on how to set-up and to run the application locally through a Node.js server, i.e. executing npm run dev. This instruction should be ok.)
+[//]: # (TODO: All NPM packages used for the project as well as third party libraries must be stated and indicated in the "About" page of the web application.)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
