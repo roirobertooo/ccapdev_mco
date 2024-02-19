@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-  margin: 8px;
+    margin: 8px;
 }
 
 .unselectable {
-  user-select: none;
+    user-select: none;
 }
