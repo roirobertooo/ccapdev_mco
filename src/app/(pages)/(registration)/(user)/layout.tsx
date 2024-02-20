@@ -10,9 +10,9 @@ export default function Layout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-        <body className={inter.className}>
-            {children}
+        <html lang="en" className="h-full bg-white">
+        <body className="{inter.className} h-full">
+        {children}
         </body>
         </html>
     );
