@@ -7,7 +7,7 @@ import BusinessDropdown from "@/app/ui/business/business-dropdown";
 
 export default function Navbar() {
     return (
-        <div className='w-2/3 mx-auto'>
+        <div className='w-2/3 mx-auto m-3'>
             <nav className='flex flex-wrap justify-between items-center'>
                 <div className='p-5 unselectable'>
                     <Link href="/" className='flex gap-3'>
