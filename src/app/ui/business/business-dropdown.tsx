@@ -1,45 +1,35 @@
 'use client';
-import React, {useEffect, useRef, useState} from "react";
+import React, {useState} from "react";
 
 import Link from "next/link";
+
+import OutsideClickHandler from '../interactivity/outside-click-handler';
 
 import {FaChevronDown} from "react-icons/fa6";
 import {FaUserCircle} from "react-icons/fa";
 import {MdAddBusiness, MdVerifiedUser} from "react-icons/md";
 
 export default function BusinessDropdown() {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const dropdownRef = useRef<HTMLDivElement | null>(null);
-
-    useEffect(() => {
-        function handleClickOutside(event: MouseEvent) {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-                setIsDropdownOpen(false);
-            }
-        }
-
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, []);
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="relative inline-block text-left" ref={dropdownRef}>
-            <button onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className='inline-flex items-center gap-2 justify-center
-                                rounded-md border border-gray-300 shadow-sm px-4 py-2
-                                bg-white text-sm font-medium text-black
-                                hover:bg-gray-100
-                                focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-brandYellow
-                                transition ease-linear duration-200'>
-                For Business
-                <FaChevronDown size="0.7em"/>
-            </button>
+        <OutsideClickHandler onOutsideClick={() => setIsOpen(false)}>
+            <div className="relative inline-block text-left">
+                <button onClick={() => setIsOpen(!isOpen)} data-dropdown-toggle="dropdown"
+                        type="button" className="
+                                                inline-flex items-center gap-2 justify-center
+                                                rounded-md border border-gray-300 shadow-sm px-4 py-2
+                                                bg-white text-sm font-medium text-black
+                                                hover:bg-gray-100
+                                                focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-brandYellow
+                                                transition ease-linear duration-200"
+                        aria-haspopup="true" aria-expanded={isOpen}>
+                    For Business
+                    <FaChevronDown size="0.7em"/>
+                </button>
 
-            {isDropdownOpen && (
-                <div
-                    className="origin-top-right absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                <div id="dropdown"
+                     className={`${isOpen ? '' : 'hidden'} origin-top-right absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}>
                     <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                         <Link href="/add_a_business"
                               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
@@ -61,7 +51,7 @@ export default function BusinessDropdown() {
                         </Link>
                     </div>
                 </div>
-            )}
-        </div>
+            </div>
+        </OutsideClickHandler>
     )
 }
