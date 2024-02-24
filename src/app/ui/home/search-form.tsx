@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
-import OutsideClickHandler from '../interactivity/outside-click-handler';
-import DropdownItem from "../interactivity/dropdown-item";
+import OutsideClickHandler from '@/app/ui/interactivity/outside-click-handler';
+import DropdownItem from "@/app/ui/interactivity/dropdown-item";
 
 import {FaChevronDown} from 'react-icons/fa6';
 

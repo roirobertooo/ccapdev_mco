@@ -3,7 +3,7 @@ import React, {useState} from "react";
 
 import Link from "next/link";
 
-import OutsideClickHandler from '../interactivity/outside-click-handler';
+import OutsideClickHandler from '@/app/ui/interactivity/outside-click-handler';
 
 import {FaChevronDown} from "react-icons/fa6";
 import {FaUserCircle} from "react-icons/fa";
