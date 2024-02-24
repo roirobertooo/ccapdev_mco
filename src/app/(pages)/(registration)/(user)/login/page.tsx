@@ -7,7 +7,8 @@ export default function Page() {
     return (
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 -mt-28">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                <Image className="mx-auto h-10 w-auto unselectable" src="/logo.png" width={40} height={40} alt="Logo" priority/>
+                <Image className="mx-auto h-10 w-auto unselectable" src="/logo.png" width={40} height={40} alt="Logo"
+                       priority/>
                 <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
                     Log in to your account
                 </h2>
@@ -16,15 +17,14 @@ export default function Page() {
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                 <form className="space-y-6" action="#" method="POST">
                     <div>
-                        <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                            Email address
+                        <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
+                            Username
                         </label>
                         <div className="mt-2">
                             <input
-                                id="email"
-                                name="email"
-                                type="email"
-                                autoComplete="email"
+                                id="username"
+                                name="username"
+                                type="text"
                                 required
                                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brandBlue sm:text-sm sm:leading-6"
                             />
@@ -32,16 +32,9 @@ export default function Page() {
                     </div>
 
                     <div>
-                        <div className="flex items-center justify-between">
-                            <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                                Password
-                            </label>
-                            <div className="text-sm">
-                                <a href="#" className="font-semibold text-brandBlue hover:text-blue-600">
-                                    Forgot password?
-                                </a>
-                            </div>
-                        </div>
+                        <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                            Password
+                        </label>
                         <div className="mt-2">
                             <input
                                 id="password"
@@ -51,6 +44,16 @@ export default function Page() {
                                 required
                                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brandBlue sm:text-sm sm:leading-6"
                             />
+                        </div>
+                    </div>
+
+                    <div className="mt-6 flex items-center justify-between">
+                        <div className="flex items-center">
+                            <input id="remember_me" name="remember_me" type="checkbox"
+                                   className="h-4 w-4 text-brandBlue focus:ring-brandBlue border-gray-300 rounded transition ease-linear duration-100"/>
+                            <label htmlFor="remember_me" className="ml-2 block text-sm text-gray-900">
+                                Remember me
+                            </label>
                         </div>
                     </div>
 
