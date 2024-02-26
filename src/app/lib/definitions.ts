@@ -1,0 +1,60 @@
+export type UserAccount = {
+    _id: {
+        $oid: string;
+    };
+
+    name: string;
+    username: string; password: string;
+    avatar_url: string;
+    description: string;
+
+    is_business: boolean; restaurant_owned: string;
+
+    review_count: number; reviews: string[];
+    comment_count: number; comments: string[];
+}
+
+export type Restaurant = {
+    _id: {
+        $oid: string;
+    };
+
+    name: string;
+    description: string;
+    address: string;
+    phone: string;
+    hours: string[][];
+
+    review_count: number; review_average: number; reviews: string[];
+
+    owner_id: string;
+}
+
+export type Review = {
+    _id: {
+        $oid: string;
+    };
+
+    user_id: string; restaurant_id: string;
+
+    rating: number;
+    date: string;
+    review_title: string; review_body: string;
+    review_media_url: string[];
+
+    likes_count: number; likes: string[];
+    dislikes_count: number; dislikes: string[];
+
+    comment_count: number; comments: string[];
+}
+
+export type Comment = {
+    _id: {
+        $oid: string;
+    };
+
+    user_id: string; review_id: string;
+
+    date: string;
+    comment_body: string;
+}
