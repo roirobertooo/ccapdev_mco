@@ -24,6 +24,7 @@ export type Restaurant = {
     address: string;
     phone: string;
     hours: string[][];
+    cover_url: string;
 
     review_count: number; review_average: number; reviews: string[];
 
