@@ -25,7 +25,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({restaurant}) => {
 
                     <Rating rating={restaurant.review_average}/>
 
-                    <p className="mt-2 font-normal text-sm">
+                    <p className="mt-2 font-normal text-sm overflow-hidden whitespace-nowrap overflow-ellipsis">
                         {restaurant.address.split(',')[0]}
                     </p>
                 </div>
