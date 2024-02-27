@@ -1,7 +1,5 @@
 export type UserAccount = {
-    _id: {
-        $oid: string;
-    };
+    _id: string;
 
     name: string;
     username: string; password: string;
@@ -15,9 +13,7 @@ export type UserAccount = {
 }
 
 export type Restaurant = {
-    _id: {
-        $oid: string;
-    };
+    _id: string;
 
     name: string;
     description: string;
@@ -33,9 +29,7 @@ export type Restaurant = {
 }
 
 export type Review = {
-    _id: {
-        $oid: string;
-    };
+    _id: string;
 
     user_id: string; restaurant_id: string;
 
@@ -51,9 +45,7 @@ export type Review = {
 }
 
 export type Comment = {
-    _id: {
-        $oid: string;
-    };
+    _id: string;
 
     user_id: string; review_id: string;
 
