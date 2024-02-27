@@ -26,7 +26,7 @@ export type Restaurant = {
     hours: string[][];
     cover_url: string;
 
-    review_count: number; review_average: number; reviews: string[];
+    review_average: number; review_count: number; reviews: string[];
 
     owner_id: string;
 }
