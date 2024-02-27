@@ -16,7 +16,7 @@ export default function RestaurantListing() {
 
     return (
         <div className="flex flex-col justify-center items-center mt-10 w-full">
-            <h2 className="justify-self-start font-bold text-3xl mb-7 w-2/3">
+            <h2 className="font-bold text-3xl mb-7 w-full ml-80">
                 Restaurants
             </h2>
 
