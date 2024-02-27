@@ -6,7 +6,7 @@ interface DropdownItemProps {
     setIsOpen: (isOpen: boolean) => void;
 }
 
-const DropdownItem: React.FC<DropdownItemProps> = ({ label, setSelectedItem, setIsOpen }) => {
+const DropdownItem: React.FC<DropdownItemProps> = ({label, setSelectedItem, setIsOpen}) => {
     return (
         <a onClick={() => {
             setSelectedItem(label);
