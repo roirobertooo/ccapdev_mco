@@ -4,6 +4,7 @@ import React from 'react';
 
 import SearchForm from "@/app/ui/home/search-form";
 import RestaurantListing from "@/app/ui/home/restaurants-listing";
+import ReviewListing from "@/app/ui/home/reviews-listing/reviews-listing";
 
 export default function Home() {
     return (
@@ -14,6 +15,12 @@ export default function Home() {
             <SearchForm/>
 
             <RestaurantListing/>
+
+            <hr className="w-4/5 mt-16 border-[1px]"/>
+
+            <ReviewListing/>
+
+            <div className="my-10"></div>
         </main>
     );
 }
