@@ -23,7 +23,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({restaurant}) => {
                         {restaurant.name}
                     </h5>
 
-                    <Rating rating={restaurant.review_average}/>
+                    <Rating rating={restaurant.review_average} includeNumber={true}/>
 
                     <p className="mt-2 font-normal text-sm overflow-hidden whitespace-nowrap overflow-ellipsis">
                         {restaurant.address.split(',')[0]}

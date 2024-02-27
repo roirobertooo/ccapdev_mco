@@ -2,9 +2,12 @@ import React from 'react';
 
 type RatingProps = {
     rating: number
+    includeNumber: boolean
 }
 
-const Rating: React.FC<RatingProps> = ({rating}) => {
+const Rating: React.FC<RatingProps> = (props) => {
+    const {rating, includeNumber} = props;
+
     return (
         <div className="flex items-center">
             {[...Array(5)].map((_, i) => (
@@ -23,9 +26,11 @@ const Rating: React.FC<RatingProps> = ({rating}) => {
                 )
             ))}
 
-            <p className="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
-                {rating}
-            </p>
+            {includeNumber &&
+                <p className="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+                    {rating}
+                </p>
+            }
         </div>
     )
 }
