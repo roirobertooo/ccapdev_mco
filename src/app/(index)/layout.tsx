@@ -1,6 +1,7 @@
-import "@/app/ui/globals.css";
-
+import React from "react";
 import {Metadata} from "next";
+
+import "@/app/ui/globals.css";
 import Template from "../ui/template";
 
 export const metadata: Metadata = {
