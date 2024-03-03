@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Restaurant} from '../../../lib/definitions';
 
-import Rating from '../../rating';
+import Rating from '../../general/rating';
 
 type RestaurantCardProps = {
     restaurant: Restaurant
