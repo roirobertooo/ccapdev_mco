@@ -15,8 +15,8 @@ export default function RestaurantListing() {
     const OPTIONS: EmblaOptionsType = {align: 'end', slidesToScroll: 'auto', loop: true};
 
     return (
-        <div className="flex flex-col justify-center items-center mt-10 w-full">
-            <h2 className="font-bold text-3xl mb-7 w-full ml-80">
+        <div className="mt-10">
+            <h2 className="font-bold text-3xl mb-7">
                 Restaurants
             </h2>
 
