@@ -16,7 +16,7 @@ export default function RestaurantListing() {
 
     return (
         <div className="mt-10">
-            <h2 className="font-bold text-3xl mb-7">
+            <h2 className={`font-bold text-3xl mb-7 ${restaurants ? '' : ' -ml-[536px]'}`}>
                 Restaurants
             </h2>
 
