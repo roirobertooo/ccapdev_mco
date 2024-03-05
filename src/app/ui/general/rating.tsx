@@ -35,7 +35,7 @@ const Rating: React.FC<RatingProps> = (props) => {
 
             {count !== -1 &&
                 <p className="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
-                    ({count})
+                    ({count} review{count === 1 ? '' : 's'})
                 </p>
             }
         </div>
