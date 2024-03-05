@@ -3,10 +3,11 @@ import React from 'react';
 type RatingProps = {
     rating: number
     includeNumber: boolean
+    count: number
 }
 
 const Rating: React.FC<RatingProps> = (props) => {
-    const {rating, includeNumber} = props;
+    const {rating, includeNumber, count} = props;
 
     return (
         <div className="flex items-center">
@@ -29,6 +30,12 @@ const Rating: React.FC<RatingProps> = (props) => {
             {includeNumber &&
                 <p className="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
                     {rating}
+                </p>
+            }
+
+            {count !== -1 &&
+                <p className="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+                    ({count})
                 </p>
             }
         </div>

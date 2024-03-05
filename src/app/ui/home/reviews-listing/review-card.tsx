@@ -39,7 +39,7 @@ function ReviewHeader({review}: { review: Review }) {
             </div>
 
             <div className="flex flex-col items-end">
-                <Rating rating={review.rating} includeNumber={false}/>
+                <Rating rating={review.rating} includeNumber={false} count={-1}/>
 
                 <a href={"#"}
                    className="mt-1.5 hover:underline text-blue-700 font-medium mr-1.5">
