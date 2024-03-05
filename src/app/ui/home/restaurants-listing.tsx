@@ -9,7 +9,7 @@ import '../interactivity/carousel/css/embla.css';
 import {Restaurant} from "../../lib/definitions";
 
 export default function RestaurantListing() {
-    const fetchString = `/api/restaurant/getAll?sortKey=name&sortOrder=asc`;
+    const fetchString = `/api/get?collectionName=restaurants&sortKeys=name&sortOrders=asc`;
     const restaurants = useFetchData<Restaurant[]>(fetchString);
 
     const OPTIONS: EmblaOptionsType = {align: 'end', slidesToScroll: 'auto', loop: true};
