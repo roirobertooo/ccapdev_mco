@@ -1,4 +1,4 @@
-export type UserAccount = {
+type UserAccount = {
     _id: string;
 
     name: string;
@@ -12,14 +12,14 @@ export type UserAccount = {
     comment_count: number; comments: string[];
 }
 
-export type Restaurant = {
+type Restaurant = {
     _id: string;
 
     name: string;
     description: string;
     address: string;
     phone: string;
-    hours: string[][];
+    hours: (string | string[])[];
     cover_url: string;
 
     review_average: number;
@@ -28,7 +28,7 @@ export type Restaurant = {
     owner_id: string;
 }
 
-export type Review = {
+type Review = {
     _id: string;
 
     user_id: string; restaurant_id: string;
@@ -41,10 +41,10 @@ export type Review = {
     likes_count: number; likes: string[];
     dislikes_count: number; dislikes: string[];
 
-    comment_count: number; comments: string[];
+    comment: string;
 }
 
-export type Comment = {
+type Comment = {
     _id: string;
 
     user_id: string; review_id: string;
@@ -52,3 +52,5 @@ export type Comment = {
     date: string;
     comment_body: string;
 }
+
+export type {UserAccount, Restaurant, Review, Comment};
