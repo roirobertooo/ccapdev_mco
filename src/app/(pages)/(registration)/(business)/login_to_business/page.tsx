@@ -1,9 +1,13 @@
-// TODO: Login To Business Page
+// TODO: "Login To Business" Page
 
-export default function Page() {
+function Page() {
     return (
         <div>
-            <h1>Login To Business Page</h1>
+            <h1>
+                Login To Business
+            </h1>
         </div>
     );
 }
+
+export default Page;

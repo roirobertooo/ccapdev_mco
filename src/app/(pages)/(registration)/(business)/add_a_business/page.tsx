@@ -1,9 +1,13 @@
-// TODO: Add a Business Page
+// TODO: "Add a Business" Page
 
-export default function Page() {
+function Page() {
     return (
         <div>
-            <h1>Add a Business Page</h1>
+            <h1>
+                Add a Business
+            </h1>
         </div>
     );
 }
+
+export default Page;
