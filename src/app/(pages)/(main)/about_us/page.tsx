@@ -1,4 +1,4 @@
-// TODO: About Us Page (Check specs for more details)
+// TODO: "About Us" Page (Check specs for more details)
 import {Metadata} from 'next';
 
 const metadata: Metadata = {
