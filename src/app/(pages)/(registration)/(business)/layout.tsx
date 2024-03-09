@@ -1,14 +1,11 @@
-import {Inter} from "next/font/google";
+import React from 'react';
+import {Inter} from 'next/font/google';
 
-import "@/app/ui/globals.css";
+import '@/app/ui/globals.css';
 
 const inter = Inter({subsets: ["latin"]});
 
-export default function Layout({
-                                   children,
-                               }: Readonly<{
-    children: React.ReactNode;
-}>) {
+function Layout({children}: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en">
         <body className={inter.className}>
@@ -17,3 +14,5 @@ export default function Layout({
         </html>
     );
 }
+
+export default Layout;
