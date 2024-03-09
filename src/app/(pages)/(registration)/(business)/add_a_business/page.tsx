@@ -1,5 +1,11 @@
 // TODO: "Add a Business" Page
 
+import {Metadata} from 'next';
+
+const metadata: Metadata = {
+    title: "Add a Business"
+};
+
 function Page() {
     return (
         <div>
@@ -10,4 +16,5 @@ function Page() {
     );
 }
 
+export {metadata};
 export default Page;
