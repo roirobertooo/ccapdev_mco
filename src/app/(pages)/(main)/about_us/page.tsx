@@ -1,5 +1,5 @@
 // TODO: About Us Page (Check specs for more details)
-import {Metadata} from "next";
+import {Metadata} from 'next';
 
 const metadata: Metadata = {
     title: "About Us"
