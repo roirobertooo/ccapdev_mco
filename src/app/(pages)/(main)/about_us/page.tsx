@@ -1,4 +1,9 @@
 // TODO: About Us Page (Check specs for more details)
+import {Metadata} from "next";
+
+const metadata: Metadata = {
+    title: "About Us"
+};
 
 function Page() {
     return (
@@ -11,4 +16,5 @@ function Page() {
     );
 }
 
+export {metadata};
 export default Page;
