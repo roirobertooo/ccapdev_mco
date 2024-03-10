@@ -6,7 +6,7 @@ import Navbar from './navbar/navbar';
 
 const inter = Inter({subsets: ["latin"]});
 
-export default function Template({children}: Readonly<{ children: React.ReactNode }>) {
+function Template({children}: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en">
         <body className={inter.className}>
@@ -17,3 +17,5 @@ export default function Template({children}: Readonly<{ children: React.ReactNod
         </html>
     );
 }
+
+export default Template;
