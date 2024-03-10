@@ -5,7 +5,7 @@ const user_accounts = [
         "avatar_url": "https://images.ctfassets.net/pof3zafcks92/1JJgL0I97eeFZPaZqJvtSb/48b8c2ca777a324dc606e651f255472c/rick-sanchez.png",
         "description": "Genius, scientist, interdimensional explorer. Wubba lubba dub dub!",
 
-        "is_business": false, "restaurant_owned": "",
+        "is_business": false,
 
         "review_count": 5, "reviews": [
             "65dd8ae7bb0f9ad533a851fd",
@@ -13,8 +13,7 @@ const user_accounts = [
             "65dd8ae7bb0f9ad533a85207",
             "65dd8ae7bb0f9ad533a8520c",
             "65dd8ae7bb0f9ad533a85211"
-        ],
-        "comment_count": 0, "comments": []
+        ]
     },
     {
         "name": "Morty Smith",
@@ -33,7 +32,7 @@ const user_accounts = [
         "avatar_url": "https://images.ctfassets.net/pof3zafcks92/3HzWioSnxUM1rWzjKRMFuD/a8e85a186b27d51f4209a087abc4da62/muscle-man.png",
         "description": "Muscle Man here, living the dream at a park. Bro-ing out and making sure to keep it swole. MY MOM!",
 
-        "is_business": false, "restaurant_owned": "",
+        "is_business": false,
 
         "review_count": 5, "reviews": [
             "65dd8ae7bb0f9ad533a851fe",
@@ -41,8 +40,7 @@ const user_accounts = [
             "65dd8ae7bb0f9ad533a85208",
             "65dd8ae7bb0f9ad533a8520d",
             "65dd8ae7bb0f9ad533a85212"
-        ],
-        "comment_count": 0, "comments": []
+        ]
     },
     {
         "name": "Pops Maellard",
@@ -61,7 +59,7 @@ const user_accounts = [
         "avatar_url": "https://images.ctfassets.net/pof3zafcks92/5VmlzV0mzQ6bsqTEGVFZ3M/362a348a672b760b9dde9df118e88be8/ice-king.png",
         "description": "Emotionally complex wizard seeking princess bride (or any kind of companionship, really). Obsessed with ice and penguins.",
 
-        "is_business": false, "restaurant_owned": "",
+        "is_business": false,
 
         "review_count": 5, "reviews": [
             "65dd8ae7bb0f9ad533a851ff",
@@ -69,8 +67,7 @@ const user_accounts = [
             "65dd8ae7bb0f9ad533a85209",
             "65dd8ae7bb0f9ad533a8520e",
             "65dd8ae7bb0f9ad533a85213"
-        ],
-        "comment_count": 0, "comments": []
+        ]
     },
     {
         "name": "Peppermint Butler",
@@ -89,7 +86,7 @@ const user_accounts = [
         "avatar_url": "https://images.ctfassets.net/pof3zafcks92/6yC2EBYyllLpXnVaJsCHRd/0a5a2586b33ceccb4e3b8171740dc6f0/bojack-horseman.png",
         "description": "Washed-up actor, struggling with life, love, and the meaning of it all. Trying to find redemption, or at least a decent drink.",
 
-        "is_business": false, "restaurant_owned": "",
+        "is_business": false,
 
         "review_count": 5, "reviews": [
             "65dd8ae7bb0f9ad533a85200",
@@ -97,8 +94,7 @@ const user_accounts = [
             "65dd8ae7bb0f9ad533a8520a",
             "65dd8ae7bb0f9ad533a8520f",
             "65dd8ae7bb0f9ad533a85214"
-        ],
-        "comment_count": 0, "comments": []
+        ]
     },
     {
         "name": "Todd Chavez",
@@ -117,7 +113,7 @@ const user_accounts = [
         "avatar_url": "https://images.ctfassets.net/pof3zafcks92/3cZGQrUkWwTc10pR5EAnU/97d0b500fa74e11ca074abd48eba0da3/homer-simpson.png",
         "description": "D'oh! Just your average guy with a love for donuts, beer, and... did I mention donuts?",
 
-        "is_business": false, "restaurant_owned": "",
+        "is_business": false,
 
         "review_count": 5, "reviews": [
             "65dd8ae7bb0f9ad533a85201",
@@ -125,8 +121,7 @@ const user_accounts = [
             "65dd8ae7bb0f9ad533a8520b",
             "65dd8ae7bb0f9ad533a85210",
             "65dd8ae7bb0f9ad533a85215"
-        ],
-        "comment_count": 0, "comments": []
+        ]
     },
     {
         "name": "Ned Flanders",
@@ -295,8 +290,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": "65e9c996171ab09da487e225"
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851f5",
@@ -313,8 +307,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851f7",
@@ -331,8 +324,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851f9",
@@ -349,8 +341,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851fb",
@@ -367,8 +358,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
 
     {
@@ -386,8 +376,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": "65e9c996171ab09da487e226"
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851f5",
@@ -404,8 +393,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851f7",
@@ -422,8 +410,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851f9",
@@ -440,8 +427,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851fb",
@@ -458,8 +444,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
 
     {
@@ -477,8 +462,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": "65e9c996171ab09da487e227"
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851f5",
@@ -495,8 +479,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851f7",
@@ -513,8 +496,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851f9",
@@ -531,8 +513,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851fb",
@@ -549,8 +530,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
 
     {
@@ -568,8 +548,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": "65e9c996171ab09da487e228"
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851f5",
@@ -586,8 +565,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851f7",
@@ -604,8 +582,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851f9",
@@ -622,8 +599,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851fb",
@@ -640,8 +616,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
 
     {
@@ -659,8 +634,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": "65e9c996171ab09da487e229"
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851f5",
@@ -677,8 +651,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851f7",
@@ -695,8 +668,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851f9",
@@ -713,8 +685,7 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     },
     {
         "user_id": "65dd7b85bb0f9ad533a851fb",
@@ -731,12 +702,47 @@ const reviews = [
         "dislikes_count": 0,
         "dislikes": [],
 
-        "comment_count": 0,
-        "comments": []
+        "owners_comments": ""
     }
 ]
 
-const comments = []
+const comments = [
+    { // Owner of McDonald's
+        "user_id": "65dd7b85bb0f9ad533a851f8",
+        "review_id": "65dd8ae7bb0f9ad533a851fd",
+
+        "date": "2024-02-28",
+        "comment_body": "Thank you for your glowing review! At McDonald's, we're dedicated to providing quick service, delicious food, and convenient locations for our valued customers like you. We're thrilled to be your go-to choice for a satisfying meal on the go. Looking forward to serving you again soon!"
+    },
+    { // Owner of Zark's Burgers
+        "user_id": "65dd7b85bb0f9ad533a851fc",
+        "review_id": "65dd8ae7bb0f9ad533a85202",
+
+        "date": "2024-02-27",
+        "comment_body": "Thank you for the wonderful feedback! We're delighted that you think we serve the best burgers ever at Zark's Burgers. Juicy patties, delicious toppings, and generous portions are our specialties. We can't wait to see you again for another mouthwatering meal!"
+    },
+    { // Owner of Army Navy
+        "user_id": "65dd7b85bb0f9ad533a851f4",
+        "review_id": "65dd8ae7bb0f9ad533a85207",
+
+        "date": "2024-02-26",
+        "comment_body": "Thank you for the kind words! We're thrilled to hear that you enjoyed our burritos. We take pride in using fresh ingredients to create bold and flavorful dishes. Looking forward to serving you again soon!"
+    },
+    { // Owner of Pepper Lunch
+        "user_id": "65dd7b85bb0f9ad533a851fa",
+        "review_id": "65dd8ae7bb0f9ad533a8520c",
+
+        "date": "2024-02-25",
+        "comment_body": "Thank you for your amazing review! We're thrilled that you enjoyed your dining experience at Pepper Lunch. Our sizzling plates and DIY concept are indeed what sets us apart. Can't wait to welcome you back for more flavorful adventures!"
+    },
+    { // Owner of Jollibee
+        "user_id": "65dd7b85bb0f9ad533a851f6",
+        "review_id": "65dd8ae7bb0f9ad533a85211",
+
+        "date": "2024-02-24",
+        "comment_body": "Thank you for your kind words! We're thrilled to hear that you enjoyed our Chickenjoy. Looking forward to serving you again soon!"
+    }
+]
 
 module.exports = {
     user_accounts,
