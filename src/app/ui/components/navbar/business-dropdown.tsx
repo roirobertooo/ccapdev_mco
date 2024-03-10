@@ -1,13 +1,12 @@
 'use client';
-import React, {useState} from "react";
 
-import Link from "next/link";
+import React, {useState} from 'react';
+import Link from 'next/link';
+import {FaChevronDown} from 'react-icons/fa6';
+import {FaUserCircle} from 'react-icons/fa';
+import {MdAddBusiness, MdVerifiedUser} from 'react-icons/md';
 
-import OutsideClickHandler from '@/app/ui/interactivity/outside-click-handler';
-
-import {FaChevronDown} from "react-icons/fa6";
-import {FaUserCircle} from "react-icons/fa";
-import {MdAddBusiness, MdVerifiedUser} from "react-icons/md";
+import OutsideClickHandler from '@/app/ui/components/interactivity/outside-click-handler';
 
 interface BusinessLinkItemProps {
     hrefLink: string;
@@ -18,7 +17,14 @@ interface BusinessLinkItemProps {
     iconClassName: string;
 }
 
-const BusinessLinkItem: React.FC<BusinessLinkItemProps> = ({hrefLink, label, Icon, setIsOpen, className, iconClassName}) => {
+const BusinessLinkItem: React.FC<BusinessLinkItemProps> = ({
+                                                               hrefLink,
+                                                               label,
+                                                               Icon,
+                                                               setIsOpen,
+                                                               className,
+                                                               iconClassName
+                                                           }) => {
     return (
         <Link onClick={() => setIsOpen(false)}
               href={hrefLink}
@@ -30,7 +36,7 @@ const BusinessLinkItem: React.FC<BusinessLinkItemProps> = ({hrefLink, label, Ico
     );
 }
 
-export default function BusinessDropdown() {
+function BusinessDropdown() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -50,7 +56,7 @@ export default function BusinessDropdown() {
                 </button>
 
                 <div id="dropdown"
-                     className={`${isOpen ? '' : 'hidden'} origin-top-right absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}>
+                     className={`${isOpen ? "" : "hidden"} origin-top-right absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10`}>
                     <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                         <BusinessLinkItem hrefLink="/add_a_business" label="Add a Business" Icon={MdAddBusiness}
                                           setIsOpen={setIsOpen}
@@ -70,3 +76,5 @@ export default function BusinessDropdown() {
         </OutsideClickHandler>
     )
 }
+
+export default BusinessDropdown;
