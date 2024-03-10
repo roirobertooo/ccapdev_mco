@@ -51,7 +51,7 @@ const TruncateText = ({text, maxChar, includeQuotes}: {
     );
 };
 
-const formatDateToLocal = (dateStr: string, locale: string = 'en-US') => {
+const formatDateToLocal = (dateStr: string, locale: string = "en-US") => {
     const date = new Date(dateStr);
 
     const options: Intl.DateTimeFormatOptions = {
