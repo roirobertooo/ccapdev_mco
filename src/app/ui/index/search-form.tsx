@@ -1,25 +1,26 @@
+// TODO: Add forms functionality
+
 import React, {useState} from 'react';
-
-import OutsideClickHandler from '@/app/ui/interactivity/outside-click-handler';
-import DropdownItem from "@/app/ui/interactivity/dropdown-item";
-
 import {FaChevronDown} from 'react-icons/fa6';
 
-export default function SearchForm() {
+import DropdownItem from '@/app/ui/interactivity/dropdown-item';
+import OutsideClickHandler from '@/app/ui/interactivity/outside-click-handler';
+
+function SearchForm() {
     const [isOpen, setIsOpen] = useState(false);
 
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchTerm, setSearchTerm] = useState("");
     const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(event.target.value);
     };
 
-    const [selectedItem, setSelectedItem] = useState('All');
+    const [selectedItem, setSelectedItem] = useState("All");
 
     return (
         <form className="max-w-lg mx-auto" action="#" method="POST">
             <div className="flex justify-center">
                 <OutsideClickHandler onOutsideClick={() => setIsOpen(false)}>
-                    <div className='flex h-12'>
+                    <div className="flex h-12">
                         <button onClick={() => setIsOpen(!isOpen)} data-dropdown-toggle="dropdown"
                                 type="button" className="
                                                         inline-flex items-center justify-center gap-3
@@ -53,12 +54,12 @@ export default function SearchForm() {
                     </div>
 
                     <div id="dropdown"
-                         className={`${isOpen ? '' : 'hidden'} absolute z-10 mt-2 w-auto rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}>
+                         className={`${isOpen ? "" : "hidden"} absolute z-10 mt-2 w-auto rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}>
                         <div className="py-1" role="menu" aria-orientation="vertical"
                              aria-labelledby="category-selector">
-                            <DropdownItem label='All' setSelectedItem={setSelectedItem} setIsOpen={setIsOpen}/>
-                            <DropdownItem label='Restaurants' setSelectedItem={setSelectedItem} setIsOpen={setIsOpen}/>
-                            <DropdownItem label='Reviews' setSelectedItem={setSelectedItem} setIsOpen={setIsOpen}/>
+                            <DropdownItem label="All" setSelectedItem={setSelectedItem} setIsOpen={setIsOpen}/>
+                            <DropdownItem label="Restaurants" setSelectedItem={setSelectedItem} setIsOpen={setIsOpen}/>
+                            <DropdownItem label="Reviews" setSelectedItem={setSelectedItem} setIsOpen={setIsOpen}/>
                         </div>
                     </div>
                 </OutsideClickHandler>
@@ -66,3 +67,5 @@ export default function SearchForm() {
         </form>
     );
 }
+
+export default SearchForm;
