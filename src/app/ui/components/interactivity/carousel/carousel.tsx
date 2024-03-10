@@ -1,13 +1,11 @@
 import React from 'react';
-
 import {EmblaOptionsType} from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
 
-import {NextButton, PrevButton, usePrevNextButtons} from './carousel-arrows';
+import {Restaurant} from '@/app/lib/definitions';
 
 import RestaurantCard from './carousel-card';
-
-import {Restaurant} from '../../../lib/definitions';
+import {usePrevNextButtons, PrevButton, NextButton} from './carousel-arrows';
 
 type PropType = {
     slides: Restaurant[]
@@ -52,4 +50,4 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     )
 }
 
-export default EmblaCarousel
+export default EmblaCarousel;
