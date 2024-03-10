@@ -1,9 +1,9 @@
 import {useState} from 'react';
-
 import {Dialog} from '@headlessui/react';
-import ReviewImagesCarousel from "./review-images-carousel";
 
-import {Review} from "../../../lib/definitions";
+import {Review} from '@/app/lib/definitions';
+
+import ReviewImagesCarousel from './review-images-carousel';
 
 function ReviewImagesModal({review}: { review: Review }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -27,10 +27,11 @@ function ReviewImagesModal({review}: { review: Review }) {
                     <Dialog.Overlay className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"/>
 
                     <span className="hidden sm:inline-block sm:align-middle sm:h-screen"
-                          aria-hidden="true">&#8203;</span>
+                          aria-hidden="true">
+                        &#8203;
+                    </span>
 
-                    <div
-                        className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl">
+                    <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl">
                         <ReviewImagesCarousel review={review}/>
                     </div>
                 </div>

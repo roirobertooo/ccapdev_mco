@@ -1,10 +1,12 @@
+// TODO: Implement images carousel
+
 import React from 'react';
 
-import {Review} from "../../../lib/definitions";
+import {Review} from '@/app/lib/definitions';
 
 function ReviewImagesCarousel({review}: { review: Review }) {
     return (
-        //     implement carousel here...
+        // Start here.
         <>
             <div>Test</div>
         </>
