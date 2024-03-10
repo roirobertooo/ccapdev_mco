@@ -1,3 +1,5 @@
+// TODO: Add images to the first review, update mongoDB as well.
+
 const user_accounts = [
     {
         "name": "Rick Sanchez",
