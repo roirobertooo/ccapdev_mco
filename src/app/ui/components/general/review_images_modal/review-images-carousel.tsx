@@ -1,4 +1,4 @@
-// TODO: Implement images carousel
+// TODO: Implement images carousel, might have to edit './review-images-modal' too
 
 import React from 'react';
 

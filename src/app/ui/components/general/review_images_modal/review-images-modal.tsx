@@ -1,3 +1,5 @@
+// TODO: Might be changed when './review-images-carousel' is implemented
+
 import {useState} from 'react';
 import {Dialog} from '@headlessui/react';
 
