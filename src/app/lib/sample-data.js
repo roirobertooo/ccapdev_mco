@@ -312,8 +312,10 @@ const reviews = [
         "review_body": "McDonald's is okay, but nothing extraordinary. Food quality is consistent, but sometimes service can be slow during peak hours.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 1,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -329,8 +331,11 @@ const reviews = [
         "review_body": "I love McDonald's! Delicious burgers, crispy fries, and friendly staff. It's my favorite place to grab a quick meal with friends.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 2,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3",
+            "65dd7b85bb0f9ad533a851f5"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -346,8 +351,12 @@ const reviews = [
         "review_body": "McDonald's let me down this time. Food was cold, and the order was incorrect. Service was slow, and the staff seemed indifferent.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 3,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3",
+            "65dd7b85bb0f9ad533a851f5",
+            "65dd7b85bb0f9ad533a851f7"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -363,8 +372,13 @@ const reviews = [
         "review_body": "McDonald's is my reliable choice for a quick bite. The food is always fresh, and the prices are reasonable. Never had a bad experience here.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 4,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3",
+            "65dd7b85bb0f9ad533a851f5",
+            "65dd7b85bb0f9ad533a851f7",
+            "65dd7b85bb0f9ad533a851f9"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -398,8 +412,10 @@ const reviews = [
         "review_body": "Zark's Burgers offers a wide variety of burger options to choose from. The burgers are always cooked perfectly and packed with flavor.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 1,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -415,8 +431,11 @@ const reviews = [
         "review_body": "While the burgers at Zark's are tasty, the service can be quite slow during peak hours. It's worth the wait if you have the time.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 2,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3",
+            "65dd7b85bb0f9ad533a851f5"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -432,8 +451,12 @@ const reviews = [
         "review_body": "My recent visit to Zark's was disappointing. The burger was overcooked, and the fries were soggy. Not worth the price.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 3,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3",
+            "65dd7b85bb0f9ad533a851f5",
+            "65dd7b85bb0f9ad533a851f7"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -449,8 +472,13 @@ const reviews = [
         "review_body": "Zark's Burgers offers a casual dining experience with delicious burgers. Perfect for a quick meal with friends or family.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 4,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3",
+            "65dd7b85bb0f9ad533a851f5",
+            "65dd7b85bb0f9ad533a851f7",
+            "65dd7b85bb0f9ad533a851f9"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -484,8 +512,10 @@ const reviews = [
         "review_body": "The food at Army Navy is decent, but the service can be quite slow, especially during busy times. It's best to go when it's not too crowded.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 1,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -501,8 +531,11 @@ const reviews = [
         "review_body": "Army Navy's tacos are fantastic! Generous portions, flavorful fillings, and a variety of options to choose from. Always a satisfying meal.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 2,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3",
+            "65dd7b85bb0f9ad533a851f5"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -518,8 +551,12 @@ const reviews = [
         "review_body": "Had a disappointing experience at Army Navy. The food was bland, and the portions were smaller than expected. Not worth the price.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 3,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3",
+            "65dd7b85bb0f9ad533a851f5",
+            "65dd7b85bb0f9ad533a851f7"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -535,8 +572,13 @@ const reviews = [
         "review_body": "Army Navy offers tasty burgers in a casual atmosphere. It's a great place to grab a quick bite with friends or family.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 4,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3",
+            "65dd7b85bb0f9ad533a851f5",
+            "65dd7b85bb0f9ad533a851f7",
+            "65dd7b85bb0f9ad533a851f9"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -570,8 +612,10 @@ const reviews = [
         "review_body": "Pepper Lunch offers delicious meals cooked right in front of you! It's a fun and interactive dining experience that I always enjoy.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 1,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -587,8 +631,11 @@ const reviews = [
         "review_body": "The food at Pepper Lunch is decent, but the service can be quite slow during peak hours. It's best to go when it's not too crowded.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 2,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3",
+            "65dd7b85bb0f9ad533a851f5"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -604,8 +651,12 @@ const reviews = [
         "review_body": "Had a disappointing experience at Pepper Lunch. The food was bland, and the service was poor. Not worth the price.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 3,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3",
+            "65dd7b85bb0f9ad533a851f5",
+            "65dd7b85bb0f9ad533a851f7"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -621,8 +672,13 @@ const reviews = [
         "review_body": "Pepper Lunch offers a unique dining experience with sizzling plates and customizable meals. It's always a fun time with friends!",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 4,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3",
+            "65dd7b85bb0f9ad533a851f5",
+            "65dd7b85bb0f9ad533a851f7",
+            "65dd7b85bb0f9ad533a851f9"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -656,8 +712,10 @@ const reviews = [
         "review_body": "Jollibee offers great value meals that are perfect for satisfying hunger on a budget. The taste is always consistent and delicious.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 1,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -673,8 +731,11 @@ const reviews = [
         "review_body": "The food at Jollibee is decent, but the long lines can be frustrating, especially during peak hours. It's best to go during off-peak times.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 2,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3",
+            "65dd7b85bb0f9ad533a851f5"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -690,8 +751,12 @@ const reviews = [
         "review_body": "Had a disappointing experience at Jollibee. The service was slow, and the staff seemed disorganized. Food was also cold upon arrival.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 3,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3",
+            "65dd7b85bb0f9ad533a851f5",
+            "65dd7b85bb0f9ad533a851f7"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
@@ -707,8 +772,13 @@ const reviews = [
         "review_body": "Jollibee has been my childhood favorite, and it still holds up! Their signature dishes bring back fond memories and never disappoint.",
         "review_media_url": [],
 
-        "likes_count": 0,
-        "likes": [],
+        "likes_count": 4,
+        "likes": [
+            "65dd7b85bb0f9ad533a851f3",
+            "65dd7b85bb0f9ad533a851f5",
+            "65dd7b85bb0f9ad533a851f7",
+            "65dd7b85bb0f9ad533a851f9"
+        ],
         "dislikes_count": 0,
         "dislikes": [],
 
