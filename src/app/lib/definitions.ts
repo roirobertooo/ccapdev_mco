@@ -41,7 +41,7 @@ type Review = {
     likes_count: number; likes: string[];
     dislikes_count: number; dislikes: string[];
 
-    comment: string;
+    owners_comments: string[];
 }
 
 type Comment = {
