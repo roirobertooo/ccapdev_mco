@@ -24,7 +24,9 @@ const user_accounts = [
         "is_business": true, "restaurant_owned": "65dd60496a83dc5af0833992",
 
         "review_count": 0, "reviews": [],
-        "comment_count": 0, "comments": []
+        "comment_count": 1, "comments": [
+            "65e9c996171ab09da487e227"
+        ]
     },
     {
         "name": "Muscle Man",
@@ -51,7 +53,9 @@ const user_accounts = [
         "is_business": true, "restaurant_owned": "65dd60496a83dc5af0833994",
 
         "review_count": 0, "reviews": [],
-        "comment_count": 0, "comments": []
+        "comment_count": 1, "comments": [
+            "65e9c996171ab09da487e229"
+        ]
     },
     {
         "name": "Ice King",
@@ -78,7 +82,9 @@ const user_accounts = [
         "is_business": true, "restaurant_owned": "65dd60496a83dc5af0833990",
 
         "review_count": 0, "reviews": [],
-        "comment_count": 0, "comments": []
+        "comment_count": 1, "comments": [
+            "65e9c996171ab09da487e225"
+        ]
     },
     {
         "name": "Bojack Horseman",
@@ -105,7 +111,9 @@ const user_accounts = [
         "is_business": true, "restaurant_owned": "65dd60496a83dc5af0833993",
 
         "review_count": 0, "reviews": [],
-        "comment_count": 0, "comments": []
+        "comment_count": 1, "comments": [
+            "65e9c996171ab09da487e228"
+        ]
     },
     {
         "name": "Homer Simpson",
@@ -132,7 +140,9 @@ const user_accounts = [
         "is_business": true, "restaurant_owned": "65dd60496a83dc5af0833991",
 
         "review_count": 0, "reviews": [],
-        "comment_count": 0, "comments": []
+        "comment_count": 1, "comments": [
+            "65e9c996171ab09da487e226"
+        ]
     }
 ]
 
