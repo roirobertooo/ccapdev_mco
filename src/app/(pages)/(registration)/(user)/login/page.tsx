@@ -1,11 +1,12 @@
-// TODO: Login Page: Forms functionality
-import React from "react";
+// TODO: Add forms functionality
 
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
-export default function Page() {
+function Page() {
     return (
-        <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 -mt-28">
+        <div className="flex flex-1 flex-col justify-center min-h-full px-6 py-12 lg:px-8 -mt-28">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                 <Image className="mx-auto h-10 w-auto unselectable" src="/logo.png" width={40} height={40} alt="Logo"
                        priority/>
@@ -26,7 +27,12 @@ export default function Page() {
                                 name="username"
                                 type="text"
                                 required
-                                className="block w-full rounded-xl border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brandBlue sm:text-sm sm:leading-6"
+                                className="block w-full py-1.5 shadow-sm
+                                            text-gray-900 sm:text-sm sm:leading-6
+                                            rounded-xl border-0
+                                            ring-1 ring-inset ring-gray-300
+                                            focus:ring-2 focus:ring-inset focus:ring-brandBlue
+                                            placeholder:text-gray-400"
                             />
                         </div>
                     </div>
@@ -42,7 +48,12 @@ export default function Page() {
                                 type="password"
                                 autoComplete="current-password"
                                 required
-                                className="block w-full rounded-xl border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brandBlue sm:text-sm sm:leading-6"
+                                className="block w-full py-1.5 shadow-sm
+                                            text-gray-900 sm:text-sm sm:leading-6
+                                            rounded-xl border-0
+                                            ring-1 ring-inset ring-gray-300
+                                            focus:ring-2 focus:ring-inset focus:ring-brandBlue
+                                            placeholder:text-gray-400"
                             />
                         </div>
                     </div>
@@ -60,20 +71,29 @@ export default function Page() {
                     <div>
                         <button
                             type="submit"
-                            className="flex w-full justify-center rounded-full bg-brandBlue px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 duration-200"
-                        >
+                            className="flex w-full justify-center
+                                        rounded-full bg-brandBlue
+                                        px-3 py-2
+                                        text-sm font-semibold leading-6 text-white
+                                        shadow-sm
+                                        hover:bg-blue-600
+                                        focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+                                        focus-visible:outline-indigo-600
+                                        duration-200">
                             Login
                         </button>
                     </div>
                 </form>
 
                 <p className="mt-10 text-center text-sm text-gray-500">
-                    Not a member?{' '}
-                    <a href="/signup" className="font-semibold leading-6 text-brandBlue hover:text-blue-600">
+                    Not a member?{" "}
+                    <Link href="/signup" className="font-semibold leading-6 text-brandBlue hover:text-blue-600">
                         Sign up!
-                    </a>
+                    </Link>
                 </p>
             </div>
         </div>
     );
 }
+
+export default Page;
