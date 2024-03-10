@@ -18,7 +18,7 @@ function Page({params}: { params: { restaurant: string } }) {
     const [restaurantData, error] = useFetchData<Restaurant[]>(fetchString);
     const restaurant = restaurantData ? restaurantData[0] : null;
 
-    if (error && restaurantData !== undefined && restaurantData !== null && restaurantData.length === 0) {
+    if (restaurantData !== undefined && restaurantData !== null && restaurantData.length === 0) {
         notFound();
     }
 
