@@ -4,7 +4,7 @@ interface AvatarPreviewProps {
     onAvatarChange: (avatar: string | null) => void;
 }
 
-export const AvatarPreview: React.FC<AvatarPreviewProps> = ({onAvatarChange}) => {
+const AvatarPreview: React.FC<AvatarPreviewProps> = ({onAvatarChange}) => {
     const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
             const reader = new FileReader();
@@ -31,3 +31,5 @@ export const AvatarPreview: React.FC<AvatarPreviewProps> = ({onAvatarChange}) =>
         </div>
     );
 };
+
+export default AvatarPreview;
