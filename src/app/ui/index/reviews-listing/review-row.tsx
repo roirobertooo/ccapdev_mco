@@ -1,8 +1,8 @@
 import React from 'react';
 
-import ReviewCard from "./review-card";
+import {Review} from '@/app/lib/definitions';
 
-import {Review} from "../../../lib/definitions";
+import ReviewCard from './review-card';
 
 type ReviewRowProps = {
     reviews: Review[]

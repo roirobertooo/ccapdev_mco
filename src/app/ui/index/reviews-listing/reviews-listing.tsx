@@ -1,13 +1,14 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 
-import {useFetchData} from "../../../lib/utils";
+import {useFetchData} from '@/app/lib/utils';
+import {Review} from '@/app/lib/definitions';
 
-import ReviewRow from "./review-row";
-import {Review} from "../../../lib/definitions";
+import Loading from '@/app/ui/loading';
+import ReviewRow from './review-row';
 
-export default function ReviewListing() {
-    const fetchString = `/api/get?collectionName=reviews&sortKeys=date&sortOrders=desc`;
-    const reviews = useFetchData<Review[]>(fetchString);
+function ReviewsListing() {
+    const fetchString = "/api/get?collectionName=reviews&sortKeys=date&sortOrders=desc";
+    const [reviews, error] = useFetchData<Review[]>(fetchString);
 
     const [displayCount, setDisplayCount] = useState(3); // Display 3 reviews initially
     const reviewsToDisplay = reviews?.slice(0, displayCount);
@@ -34,8 +35,10 @@ export default function ReviewListing() {
                     }
                 </div>
                 :
-                <div className="italic">Recent reviews can be seen here.</div>
+                <Loading/>
             }
         </div>
     );
 }
+
+export default ReviewsListing;
