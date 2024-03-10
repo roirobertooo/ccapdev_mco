@@ -1,7 +1,7 @@
 import {EmblaOptionsType} from 'embla-carousel';
 
 import {useFetchData} from '@/app/lib/utils';
-import {Restaurant} from '@/applib/definitions';
+import {Restaurant} from '@/app/lib/definitions';
 
 import Loading from '@/app/ui/loading';
 import '@/app/ui/components/interactivity/carousel/css/embla.css';

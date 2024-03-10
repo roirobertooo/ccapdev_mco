@@ -6,7 +6,7 @@ import React, {useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import {AvatarPreview} from '@/app/ui/signup/avatar-preview';
+import AvatarPreview from '@/app/ui/signup/avatar-preview';
 
 function Page() {
     const [avatar, setAvatar] = useState<string | null>("/signup/avatar.png");

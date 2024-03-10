@@ -3,8 +3,8 @@
 import React, {useState} from 'react';
 import {FaChevronDown} from 'react-icons/fa6';
 
-import DropdownItem from '@/app/ui/interactivity/dropdown-item';
-import OutsideClickHandler from '@/app/ui/interactivity/outside-click-handler';
+import DropdownItem from '@/app/ui/components/interactivity/dropdown-item';
+import OutsideClickHandler from '@/app/ui/components/interactivity/outside-click-handler';
 
 function SearchForm() {
     const [isOpen, setIsOpen] = useState(false);

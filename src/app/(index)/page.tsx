@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-import SearchForm from '@/app/ui/home/search-form';
-import RestaurantsListing from '@/app/ui/home/restaurants-listing';
-import ReviewsListing from '@/app/ui/home/reviews-listing/reviews-listing';
+import SearchForm from '@/app/ui/index/search-form';
+import RestaurantsListing from '@/app/ui/index/restaurants-listing';
+import ReviewsListing from '@/app/ui/index/reviews-listing/reviews-listing';
 
 function Home() {
     return (
