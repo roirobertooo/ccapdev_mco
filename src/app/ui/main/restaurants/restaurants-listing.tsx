@@ -47,8 +47,6 @@ function RestaurantsListing() {
 
                     const AvailabilityFilter = isRestaurantOpen(restaurant.hours);
 
-                    console.log(restaurant.name, AvailabilityFilter);
-
                     if (filters.get("availability") === "open" && !AvailabilityFilter && !isOpen24Hours) {
                         availability = false;
                     } else availability = !(filters.get("availability") === "closed" && (AvailabilityFilter || isOpen24Hours));
