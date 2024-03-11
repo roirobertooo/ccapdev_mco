@@ -20,7 +20,7 @@ function Page({params}: { params: { user: string } }) {
     }
 
     const reviewFetchString = `/api/get?collectionName=reviews&findKeys=user_id&findValues=${params.user}&sortKeys=date&sortOrders=desc`;
-    const [reviewsData, reviewsError] = useFetchData<Review>(reviewFetchString);
+    const [reviewsData, reviewsError] = useFetchData<Review[]>(reviewFetchString);
 
     const establishmentFetchString = `/api/get?collectionName=reviews&findKeys=restaurant_id&findValues=${user && user.restaurant_owned}&sortKeys=date&sortOrders=desc`;
     const [establishmentData, establishmentError] = useFetchData<Review[]>(establishmentFetchString);
@@ -47,7 +47,7 @@ function Page({params}: { params: { user: string } }) {
                                 </div>
                                 :
                                 establishmentData?.map(review => (
-                                    <ReviewEntry key={establishmentData._id} review={review}/>
+                                    <ReviewEntry key={review._id} review={review}/>
                                 ))
                             }
                         </div>
@@ -65,7 +65,7 @@ function Page({params}: { params: { user: string } }) {
                     }
 
                     {reviewsData?.map(review => (
-                        <ReviewEntry key={reviewsData._id} review={review}/>
+                        <ReviewEntry key={review._id} review={review}/>
                     ))}
                 </div>
             </div>
