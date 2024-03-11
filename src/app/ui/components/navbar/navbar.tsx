@@ -62,7 +62,7 @@ function Navbar({currentUser}: NavbarProps) {
                         </>
                         :
                         <OutsideClickHandler onOutsideClick={() => setDropdownOpen(false)}>
-                            <div onClick={toggleDropdown} className="relative">
+                            <div onClick={toggleDropdown} className="relative z-10">
                                 <Image src={user.avatar_url} alt="" width={50} height={50}
                                        className="rounded-full border-2 border-gray-400 unselectable cursor-pointer"/>
                                 <div
