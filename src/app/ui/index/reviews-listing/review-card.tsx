@@ -57,9 +57,9 @@ function ReviewBody({review}: { review: Review }) {
                 {review.review_title}
             </div>
 
-            <p className="text-gray-700 text-base mt-3">
+            <div className="text-gray-700 text-base mt-3">
                 <TruncateText text={review.review_body} maxChar={100} includeQuotes={true}/>
-            </p>
+            </div>
         </div>
     );
 }
