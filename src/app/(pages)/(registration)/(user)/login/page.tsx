@@ -1,10 +1,35 @@
-// TODO: Add forms functionality
+'use client';
 
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import {useFormState, useFormStatus} from 'react-dom';
+
+import {authenticate} from '@/app/lib/actions';
+
+function LoginButton() {
+    const {pending} = useFormStatus();
+
+    return (
+        <button aria-disabled={pending}
+                type="submit"
+                className="flex w-full justify-center
+                           rounded-full bg-brandBlue
+                           px-3 py-2
+                           text-sm font-semibold leading-6 text-white
+                           shadow-sm
+                           hover:bg-blue-600
+                           focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+                           focus-visible:outline-indigo-600
+                           duration-200">
+            Login
+        </button>
+    )
+}
 
 function Page() {
+    const [errorMessage, dispatch] = useFormState(authenticate, undefined);
+
     return (
         <div className="flex flex-1 flex-col justify-center min-h-full px-6 py-12 lg:px-8 -mt-28">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -15,8 +40,20 @@ function Page() {
                 </h2>
             </div>
 
-            <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                <form className="space-y-6" action="#" method="POST">
+            <div className={`${errorMessage ? "" : "mt-10"} sm:mx-auto sm:w-full sm:max-w-sm`}>
+                <form className="space-y-6" action={dispatch}>
+                    <div className="flex justify-center">
+                        {errorMessage &&
+                            <div
+                                className="w-fit bg-red-100 border border-red-400 text-red-700 px-3 py-2 rounded relative"
+                                role="alert">
+                                <span className="block sm:inline font-medium">
+                                    {errorMessage}
+                                </span>
+                            </div>
+                        }
+                    </div>
+
                     <div>
                         <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
                             Username
@@ -69,19 +106,7 @@ function Page() {
                     </div>
 
                     <div>
-                        <button
-                            type="submit"
-                            className="flex w-full justify-center
-                                        rounded-full bg-brandBlue
-                                        px-3 py-2
-                                        text-sm font-semibold leading-6 text-white
-                                        shadow-sm
-                                        hover:bg-blue-600
-                                        focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
-                                        focus-visible:outline-indigo-600
-                                        duration-200">
-                            Login
-                        </button>
+                        <LoginButton/>
                     </div>
                 </form>
 
