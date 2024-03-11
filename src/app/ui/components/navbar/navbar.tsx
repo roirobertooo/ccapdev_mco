@@ -71,6 +71,10 @@ function Navbar({currentUser}: NavbarProps) {
                                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 hover:text-gray-900">
                                         Profile
                                     </Link>
+                                    <Link href={`/users/${user._id}/settings`}
+                                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 hover:text-gray-900">
+                                        Settings
+                                    </Link>
                                     <form action={deauthenticate}>
                                         <button
                                             className="flex justify-start px-4 py-2 w-40 text-sm text-gray-700 hover:bg-gray-200 hover:text-gray-900">
