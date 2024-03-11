@@ -12,7 +12,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const sortKeys = (req.query.sortKeys as string)?.split(",") || [];
     const sortOrders = (req.query.sortOrders as string)?.split(",") || [];
 
-    if (findValues[findKeys.indexOf("_id")] === "null" ||
+    if (findValues[findKeys.indexOf("_id")] === "null" || findValues[findKeys.indexOf("_id")] === "undefined" ||
         findKeys.length !== findValues.length || sortKeys.length !== sortOrders.length) {
         return;
     }
