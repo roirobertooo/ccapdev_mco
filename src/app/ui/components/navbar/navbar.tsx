@@ -1,10 +1,31 @@
-import React from 'react';
+'use client';
+
+import React, {useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import {deauthenticate} from '@/app/lib/actions';
+
+import {useFetchData} from '@/app/lib/utils';
+import {UserAccount} from '@/app/lib/definitions';
 
 import BusinessDropdown from './business-dropdown';
+import OutsideClickHandler from '@/app/ui/components/interactivity/outside-click-handler';
 
-function Navbar() {
+interface NavbarProps {
+    currentUser: string | null;
+}
+
+function Navbar({currentUser}: NavbarProps) {
+    const fetchString = `/api/get?collectionName=user_accounts&findKeys=_id&findValues=${currentUser}`;
+    const [userData, error] = useFetchData<UserAccount[]>(fetchString);
+    const user = userData ? userData[0] : null;
+
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+    };
+
     return (
         <div className="w-2/3 mx-auto m-3">
             <nav className="flex flex-wrap justify-between items-center">
@@ -27,15 +48,39 @@ function Navbar() {
                 <div className="flex gap-10 items-center">
                     <BusinessDropdown/>
 
-                    <Link href="/login" className="font-bold -mr-4">Login</Link>
-                    <Link href="/signup" className="font-bold
+                    {!user ?
+                        <>
+                            <Link href="/login" className="font-bold -mr-4">Login</Link>
+                            <Link href="/signup" className="font-bold
                                                     border-2 border-solid border-brandBlue rounded-xl
                                                     bg-brandBlue text-white
                                                     hover:border-blue-600 hover:bg-blue-600
                                                     p-4 pt-2 pb-2
                                                     transition ease-linear duration-200">
-                        Sign Up
-                    </Link>
+                                Sign Up
+                            </Link>
+                        </>
+                        :
+                        <OutsideClickHandler onOutsideClick={() => setDropdownOpen(false)}>
+                            <div onClick={toggleDropdown} className="relative">
+                                <Image src={user.avatar_url} alt="" width={50} height={50}
+                                       className="rounded-full border-2 border-gray-400 unselectable cursor-pointer"/>
+                                <div
+                                    className={`absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded shadow-xl ${dropdownOpen ? '' : 'hidden'}`}>
+                                    <Link href={`/users/${user._id}`}
+                                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 hover:text-gray-900">
+                                        Profile
+                                    </Link>
+                                    <form action={deauthenticate}>
+                                        <button
+                                            className="flex justify-start px-4 py-2 w-40 text-sm text-gray-700 hover:bg-gray-200 hover:text-gray-900">
+                                            Sign Out
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </OutsideClickHandler>
+                    }
                 </div>
             </nav>
         </div>
