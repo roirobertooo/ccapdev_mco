@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import {usePathname} from 'next/navigation';
 
 import {useFetchData, TruncateText, formatDateToLocal} from '@/app/lib/utils';
 import {UserAccount, Review, Comment} from '@/app/lib/definitions';
@@ -22,13 +23,13 @@ function Header({review, user}: HeaderProps) {
     return (
         <div className="flex flex-row gap-3 items-center justify-between">
             <div className="flex flex-row gap-3 items-center">
-                <Link href={"#"}>
+                <Link href={`/users/${user._id}`}>
                     <Image src={user.avatar_url} alt="" width={50} height={50}
                            className="rounded-full border border-1 unselectable"/>
                 </Link>
 
                 <div className="flex flex-col align-middle font-medium mb-2">
-                    <Link href={"#"}
+                    <Link href={`/users/${user._id}`}
                           className="hover:underline">
                         {user.name}
                     </Link>
@@ -47,11 +48,22 @@ function Header({review, user}: HeaderProps) {
 }
 
 function ReviewBody({review}: { review: Review }) {
+    const router = usePathname();
+    const isRestaurantRoute = router?.startsWith('/restaurants');
+
     return (
         <div className="px-2 pt-4 mb-1">
-            <div className="font-bold text-xl mb-2">
-                {review.review_title}
-            </div>
+            {!isRestaurantRoute ? (
+                <Link href={`/restaurants/${review.restaurant_id}#${review._id}`}>
+                    <p className="font-bold text-xl mb-2 hover:underline cursor-pointer">
+                        {review.review_title}
+                    </p>
+                </Link>
+            ) : (
+                <p className="font-bold text-xl mb-2">
+                    {review.review_title}
+                </p>
+            )}
 
             <p className="pt-1">
                 <TruncateText text={review.review_body} maxChar={100} includeQuotes={false}/>
@@ -69,7 +81,8 @@ const Review: React.FC<ReviewProps> = ({review}) => {
     const [comments, commentsError] = useFetchData<Comment[]>(commentsFetchString);
 
     return (
-        <div className="border-[1px] rounded-md mb-2 p-5">
+        <div className="border-[1px] rounded-md mb-2 p-5"
+             id={review._id}>
             {user ? (
                 <>
                     <Header review={review} user={user}/>
