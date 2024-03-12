@@ -3,6 +3,7 @@
 import React, {useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import {useCookies} from 'next-client-cookies';
 import {deauthenticate} from '@/app/lib/actions';
 
 import {useFetchData} from '@/app/lib/utils';
@@ -11,11 +12,9 @@ import {UserAccount} from '@/app/lib/definitions';
 import BusinessDropdown from './business-dropdown';
 import OutsideClickHandler from '@/app/ui/components/interactivity/outside-click-handler';
 
-interface NavbarProps {
-    currentUser: string | null;
-}
+function Navbar() {
+    const currentUser = useCookies().get("currentUser");
 
-function Navbar({currentUser}: NavbarProps) {
     const fetchString = `/api/get?collectionName=user_accounts&findKeys=_id&findValues=${currentUser}`;
     const [userData, error] = useFetchData<UserAccount[]>(fetchString);
     const user = userData ? userData[0] : null;
