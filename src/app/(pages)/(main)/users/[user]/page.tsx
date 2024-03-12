@@ -29,7 +29,7 @@ function Page({params}: { params: { user: string } }) {
         !user ?
             <Loading/>
             :
-            <div className="flex flex-row w-2/3 mx-auto mt-20 gap-40">
+            <div className="flex flex-row w-2/3 mx-auto mt-20 gap-40 mb-20">
                 <div className="w-1/2 mx-auto">
                     <Header user={user}/>
 
