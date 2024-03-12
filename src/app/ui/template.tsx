@@ -1,5 +1,6 @@
 import React from 'react';
 import {Inter} from 'next/font/google';
+import {CookiesProvider} from 'next-client-cookies/server';
 
 import './globals.css';
 import Navbar from '@/app/ui/components/navbar/navbar';
@@ -10,7 +11,9 @@ function Template({children}: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en">
         <body className={inter.className}>
-            <Navbar/>
+            <CookiesProvider>
+                <Navbar/>
+            </CookiesProvider>
 
             {children}
         </body>
