@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import {usePathname} from 'next/navigation';
 
 import {formatDateToLocal, TruncateText, useFetchData} from '@/app/lib/utils';
 import {Restaurant, Review, UserAccount} from '@/app/lib/definitions';
@@ -21,13 +22,13 @@ function ReviewHeader({review}: { review: Review }) {
     return (
         <div className="flex flex-row px-6 pt-6 items-center justify-between">
             <div className="flex flex-row gap-3 items-center">
-                <Link href={"#"}>
+                <Link href={`/users/${review.user_id}`}>
                     <Image src={reviewer.avatar_url} alt="" width={50} height={50}
                            className="rounded-full border border-1 unselectable"/>
                 </Link>
 
                 <div className="flex flex-col align-middle font-medium mb-2">
-                    <Link href={"#"}
+                    <Link href={`/users/${review.user_id}`}
                           className="hover:underline">
                         {reviewer.name}
                     </Link>
@@ -51,11 +52,22 @@ function ReviewHeader({review}: { review: Review }) {
 }
 
 function ReviewBody({review}: { review: Review }) {
+    const router = usePathname();
+    const isRestaurantRoute = router?.startsWith("/restaurants");
+
     return (
         <div className="px-6 pt-4 mb-1">
-            <div className="font-bold text-xl">
-                {review.review_title}
-            </div>
+            {!isRestaurantRoute ?
+                <Link href={`/restaurants/${review.restaurant_id}#${review._id}`}>
+                    <p className="font-bold text-xl hover:underline cursor-pointer">
+                        {review.review_title}
+                    </p>
+                </Link>
+                :
+                <div className="font-bold text-xl">
+                    {review.review_title}
+                </div>
+            }
 
             <div className="text-gray-700 text-base mt-3">
                 <TruncateText text={review.review_body} maxChar={100} includeQuotes={true}/>
