@@ -49,7 +49,7 @@ function Header({review, user}: HeaderProps) {
 
 function ReviewBody({review}: { review: Review }) {
     const router = usePathname();
-    const isRestaurantRoute = router?.startsWith('/restaurants');
+    const isRestaurantRoute = router?.startsWith("/restaurants");
 
     return (
         <div className="px-2 pt-4 mb-1">
