@@ -2,9 +2,10 @@ import React from 'react';
 
 interface AvatarPreviewProps {
     onAvatarChange: (avatar: string | null) => void;
+    isRequired?: boolean;
 }
 
-const AvatarPreview: React.FC<AvatarPreviewProps> = ({onAvatarChange}) => {
+const AvatarPreview: React.FC<AvatarPreviewProps> = ({onAvatarChange, isRequired}) => {
     const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
             const reader = new FileReader();
@@ -26,7 +27,7 @@ const AvatarPreview: React.FC<AvatarPreviewProps> = ({onAvatarChange}) => {
                 name="avatar"
                 accept="image/*"
                 onChange={handleAvatarChange}
-                required
+                required={isRequired !== undefined ? isRequired : true}
             />
         </div>
     );
