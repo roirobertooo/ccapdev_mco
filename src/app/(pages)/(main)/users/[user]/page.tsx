@@ -42,7 +42,7 @@ function Page({params}: { params: { user: string } }) {
                             {establishmentData && establishmentData.length === 0 ?
                                 <div className="w-full">
                                     <p className="text-center w-full text-md font-medium italic border-[1px] p-4 rounded-md border-gray-500">
-                                        No reviews yet.
+                                        No reviews written yet.
                                     </p>
                                 </div>
                                 :
