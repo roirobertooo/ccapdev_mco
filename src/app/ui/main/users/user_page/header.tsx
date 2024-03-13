@@ -2,7 +2,7 @@ import {useState} from 'react';
 import Link from 'next/link';
 
 import {useFetchData} from '@/app/lib/utils';
-import {UserAccount, Restaurant} from '@/app/lib/definitions';
+import {Restaurant, UserAccount} from '@/app/lib/definitions';
 
 function Header({user}: { user: UserAccount }) {
     const fetchString = `/api/get?collectionName=restaurants&findKeys=_id&findValues=${user.restaurant_owned}`;
@@ -61,7 +61,7 @@ function Header({user}: { user: UserAccount }) {
                             Description
                         </p>
                         <p>
-                            {user.description}
+                            {user.description === "" ? <em>No description.</em> : user.description}
                         </p>
                     </div>
                 </div>
