@@ -1,17 +1,36 @@
 import React from 'react';
 
+import uploadImage from '@/app/lib/create-asset';
+
 interface AvatarPreviewProps {
     onAvatarChange: (avatar: string | null) => void;
     isRequired?: boolean;
+    upload?: boolean;
 }
 
-const AvatarPreview: React.FC<AvatarPreviewProps> = ({onAvatarChange, isRequired}) => {
+const AvatarPreview: React.FC<AvatarPreviewProps> = ({onAvatarChange, isRequired, upload}) => {
     const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
             const reader = new FileReader();
 
             reader.onload = (event) => {
-                onAvatarChange(event.target?.result as string);
+                if (upload != true) {
+                    onAvatarChange(event.target?.result as string);
+                } else { // TODO: In progress
+                    if (e.target.files === null) return;
+                    const imageBlob = new Blob([e.target.files[0]], {type: e.target.files[0].type});
+
+                    const tempImageUrl = URL.createObjectURL(imageBlob);
+
+                    const asset = {
+                        title: "avatar",
+                        path: tempImageUrl
+                    }
+
+                    const imageUrl = uploadImage(asset);
+
+                    onAvatarChange(imageUrl);
+                }
             };
 
             reader.readAsDataURL(e.target.files[0]);
