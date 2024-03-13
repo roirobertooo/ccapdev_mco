@@ -1,7 +1,7 @@
 import {cookies} from 'next/headers';
 import {notFound} from 'next/navigation';
 
-import UserForm from '@/app/ui/main/users/UserForm';
+import UserForm from '@/app/ui/main/users/user-form';
 
 function Page({params}: { params: { user: string } }) {
     const user = cookies().get("currentUser")?.value || null;
