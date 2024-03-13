@@ -24,35 +24,18 @@ function Page() {
 
                     <form>
                         <div className="mt-4 space-y-6">
-                            <div className="flex flex-row gap-5">
-                                <div>
-                                    <label className="block mb-3 text-sm font-medium text-gray-600"
-                                           htmlFor="first_name">
-                                        First name
-                                    </label>
-                                    <input
-                                        className="block w-full px-6 py-3
+                            <div>
+                                <label className="block mb-3 text-sm font-medium text-gray-600" htmlFor="last_name">
+                                    Name
+                                </label>
+                                <input
+                                    className="block w-full px-6 py-3
                                                     text-black bg-white border border-gray-200
                                                     appearance-none
                                                     rounded-xl
                                                     placeholder:text-gray-400
                                                     focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
-                                        placeholder="First" required/>
-                                </div>
-
-                                <div>
-                                    <label className="block mb-3 text-sm font-medium text-gray-600" htmlFor="last_name">
-                                        Last name
-                                    </label>
-                                    <input
-                                        className="block w-full px-6 py-3
-                                                    text-black bg-white border border-gray-200
-                                                    appearance-none
-                                                    rounded-xl
-                                                    placeholder:text-gray-400
-                                                    focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
-                                        placeholder="Last" required/>
-                                </div>
+                                    placeholder="Name" required/>
                             </div>
 
                             <div className="flex flex-row gap-5">
