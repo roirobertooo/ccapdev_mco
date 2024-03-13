@@ -3,6 +3,7 @@
 import React, {useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import {redirect} from 'next/navigation';
 import {useCookies} from 'next-client-cookies';
 import {deauthenticate} from '@/app/lib/actions';
 
@@ -75,8 +76,8 @@ function Navbar() {
                                         Settings
                                     </Link>
                                     <form action={deauthenticate}>
-                                        <button
-                                            className="flex justify-start px-4 py-2 w-36 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+                                        <button onClick={() => redirect("/")}
+                                                className="flex justify-start px-4 py-2 w-36 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                                             Sign Out
                                         </button>
                                     </form>
