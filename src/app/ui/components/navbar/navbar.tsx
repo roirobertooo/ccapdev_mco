@@ -76,7 +76,7 @@ function Navbar() {
                                     </Link>
                                     <form action={deauthenticate}>
                                         <button
-                                            className="flex justify-start px-4 py-2 w-40 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900">
+                                            className="flex justify-start px-4 py-2 w-36 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900">
                                             Sign Out
                                         </button>
                                     </form>
