@@ -13,6 +13,10 @@ function middleware(request: NextRequest) {
     if (currentUser && (request.nextUrl.pathname.startsWith("/login") || request.nextUrl.pathname.startsWith("/signup"))) {
         return Response.redirect(new URL("/", request.url));
     }
+
+    if (!currentUser && (request.nextUrl.pathname.endsWith("/settings"))) {
+        return Response.redirect(new URL("/", request.url));
+    }
 }
 
 const config = {
