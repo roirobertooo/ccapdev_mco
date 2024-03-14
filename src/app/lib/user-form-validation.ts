@@ -1,6 +1,7 @@
 'use client';
 
 import {UserAccount} from './definitions';
+import {postData} from "./utils";
 
 interface UserForm {
     user: UserAccount | null;
@@ -54,83 +55,19 @@ function ValidateForm(userForm: UserForm) {
     }
 
     if (user && name !== user.name) {
-        const postString = `/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=name&updateValues=${name}`;
-
-        fetch(postString, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        postData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=name&updateValues=${name}`);
     }
 
     if (user && username !== user.username) {
-        const postString = `/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=username&updateValues=${username}`;
-
-        fetch(postString, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        postData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=username&updateValues=${username}`);
     }
 
     if (password !== "") {
-        const postString = `/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=password&updateValues=${password}`;
-
-        fetch(postString, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        postData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=password&updateValues=${password}`);
     }
 
     if (user && description !== user.description) {
-        const postString = `/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=description&updateValues=${description}`;
-
-        fetch(postString, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        postData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=description&updateValues=${description}`);
     }
 
     return name !== user?.name || username !== user?.username || password !== "" || description !== user?.description;
