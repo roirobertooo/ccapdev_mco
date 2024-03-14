@@ -38,6 +38,7 @@ function ReviewFooter({review, classOpts}: ReviewFooterProps) {
         const updateLikesCount = hasLiked ? (likes ? likes - 1 : review.likes_count - 1) : (likes ? likes + 1 : review.likes_count + 1);
 
         const postString = `/api/post?collectionName=reviews&findKeys=_id&findValues=${review._id}&updateKeys=likes_count,${hasLiked ? "-" : ""}likes&updateValues=${updateLikesCount},${currentUser}`;
+
         fetch(postString, {
             method: "POST",
             headers: {
@@ -67,6 +68,7 @@ function ReviewFooter({review, classOpts}: ReviewFooterProps) {
         const updateDislikesCount = hasDisliked ? (dislikes ? dislikes - 1 : review.dislikes_count - 1) : (dislikes ? dislikes + 1 : review.dislikes_count + 1);
 
         const postString = `/api/post?collectionName=reviews&findKeys=_id&findValues=${review._id}&updateKeys=dislikes_count,${hasDisliked ? "-" : ""}dislikes&updateValues=${updateDislikesCount},${currentUser}`;
+
         fetch(postString, {
             method: "POST",
             headers: {

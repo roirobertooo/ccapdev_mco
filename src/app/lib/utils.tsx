@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useEffect, useState} from 'react';
 
 const useFetchData = <T, >(fetchString: string): [T | null, string | null] => {
     const [data, setData] = useState<T | null>(null);
@@ -79,4 +79,22 @@ const formatTime = (timeStr: string) => {
     return `${formattedHour}:${formattedMinute} ${period}`;
 };
 
-export {useFetchData, TruncateText, formatDateToLocal, formatTime};
+const postData = (postString: string) => {
+    fetch(postString, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .catch(error => {
+            console.error(error);
+        });
+};
+
+export {useFetchData, TruncateText, formatDateToLocal, formatTime, postData};
