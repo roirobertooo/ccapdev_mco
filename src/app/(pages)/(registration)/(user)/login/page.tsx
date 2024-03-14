@@ -32,7 +32,7 @@ function Page() {
 
     return (
         <div className="flex flex-1 flex-col justify-center min-h-full px-6 py-12 lg:px-8 -mt-28">
-            <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+            <div className="sm:mx-auto sm:w-full sm:max-w-sm mt-36">
                 <Image className="mx-auto h-10 w-auto unselectable" src="/logo.png" width={40} height={40} alt="Logo"
                        priority/>
                 <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
@@ -40,7 +40,7 @@ function Page() {
                 </h2>
             </div>
 
-            <div className={`${errorMessage ? "" : "mt-10"} sm:mx-auto sm:w-full sm:max-w-sm`}>
+            <div className={`${errorMessage ? "" : "mt-[42px]"} sm:mx-auto sm:w-full sm:max-w-sm`}>
                 <form className="space-y-6" action={dispatch}>
                     <div className="flex justify-center">
                         {errorMessage &&
