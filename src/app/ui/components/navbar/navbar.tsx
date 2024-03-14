@@ -45,6 +45,11 @@ function Navbar() {
                 </div>
 
                 <div className="flex gap-10 items-center">
+                    <Link href="/write_a_review"
+                          className="font-medium text-sm hover:underline underline-offset-8">
+                        Write a Review
+                    </Link>
+
                     <BusinessDropdown/>
 
                     {!user ?
