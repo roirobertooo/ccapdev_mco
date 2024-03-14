@@ -18,7 +18,7 @@ function Page() {
                     </div>
 
                     <div className="flex justify-center">
-                        <UserForm requireAll={true}/>
+                        <UserForm requireAll={true}/> {/*TODO: fix prod error sign up cookie*/}
                     </div>
                 </div>
             </div>
