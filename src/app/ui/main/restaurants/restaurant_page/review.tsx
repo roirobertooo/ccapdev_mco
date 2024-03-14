@@ -29,17 +29,28 @@ function Header({review, user}: HeaderProps) {
     return (
         <div className="flex flex-row gap-3 items-center justify-between">
             <div className="flex flex-row gap-3 items-center">
-                <Link href={`/users/${user._id}`}>
+                {ownProfile ?
                     <Image src={user.avatar_url} alt="" width={50} height={50}
                            className="rounded-full border border-1 unselectable"/>
-                </Link>
+                    :
+                    <Link href={`/users/${user._id}`}>
+                        <Image src={user.avatar_url} alt="" width={50} height={50}
+                               className="rounded-full border border-1 unselectable"/>
+                    </Link>
+                }
 
                 <div className="flex flex-col align-middle font-medium mb-2">
                     <div>
-                        <Link href={`/users/${user._id}`}
-                              className="hover:underline">
-                            {user.name}
-                        </Link>
+                        {ownProfile ?
+                            <span>
+                                {user.name}
+                            </span>
+                            :
+                            <Link href={`/users/${user._id}`}
+                                  className="hover:underline">
+                                {user.name}
+                            </Link>
+                        }
 
                         {review.edited && <span className="ml-2 font-normal">(edited)</span>}
                     </div>
