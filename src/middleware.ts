@@ -10,7 +10,7 @@ function middleware(request: NextRequest) {
 
     console.log("middleware", currentUser); // TODO: Remove this line
 
-    if (currentUser && request.nextUrl.pathname.startsWith("/login")) {
+    if (currentUser && (request.nextUrl.pathname.startsWith("/login") || request.nextUrl.pathname.startsWith("/signup"))) {
         return Response.redirect(new URL("/", request.url));
     }
 }
