@@ -1,12 +1,13 @@
 'use client';
 
 import {UserAccount} from './definitions';
-import {postData} from "./utils";
 
 interface UserForm {
+    requireAll: boolean;
+
     user: UserAccount | null;
     userAccounts: string[] | undefined;
-    userId: string;
+
     name: string;
     username: string | null;
     password: string | null;
@@ -19,18 +20,19 @@ function ValidateForm(userForm: UserForm) {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
     const {
-        user, userAccounts, userId,
+        requireAll,
+        user, userAccounts,
         name, username, password, repeatPassword, description
     } = userForm;
 
-    if (user && name !== user.name) {
+    if (requireAll || (user && name !== user.name)) {
         if (name === "") {
             alert("Invalid name. It cannot be empty.");
             return -1;
         }
     }
 
-    if (user && username && username !== user.username) {
+    if (username && (requireAll || (user && username !== user.username))) {
         if (!usernameRegex.test(username)) {
             alert("Invalid username. It should be alphanumeric and between 4 to 15 characters long.");
             return -1;
@@ -42,7 +44,7 @@ function ValidateForm(userForm: UserForm) {
         }
     }
 
-    if (password !== "") {
+    if (requireAll || password !== "") {
         if (password !== null && !passwordRegex.test(password)) {
             alert("Invalid password. It should be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.");
             return -1;
