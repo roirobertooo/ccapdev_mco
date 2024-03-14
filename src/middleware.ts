@@ -8,7 +8,7 @@ NextAuth(authConfig).auth;
 function middleware(request: NextRequest) {
     const currentUser = request.cookies.get("currentUser")?.value;
 
-    console.log("middleware", currentUser); // TODO: Remove this line
+    // console.log("middleware", currentUser); // TODO: Remove this line
 
     if (currentUser && (request.nextUrl.pathname.startsWith("/login") || request.nextUrl.pathname.startsWith("/signup"))) {
         return Response.redirect(new URL("/", request.url));
