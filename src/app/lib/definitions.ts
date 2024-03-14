@@ -42,6 +42,8 @@ type Review = {
     dislikes_count: number; dislikes: string[];
 
     owners_comments: string[];
+
+    edited: boolean;
 }
 
 type Comment = {
