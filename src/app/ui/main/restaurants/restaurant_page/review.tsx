@@ -121,7 +121,7 @@ const Review: React.FC<ReviewProps> = ({review}) => {
     const [comments, commentsError] = useFetchData<Comment[]>(commentsFetchString);
 
     return (
-        <div className="border-[1px] rounded-md mb-2 p-5"
+        <div className="border-[1px] rounded-md mb-2 p-5 w-[500px]"
              id={review._id}>
             {user ? (
                 <>
