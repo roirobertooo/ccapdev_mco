@@ -1,6 +1,7 @@
 // TODO: "Claim a Business" Page
 
 import {Metadata} from 'next';
+import {notFound} from 'next/navigation';
 
 const metadata: Metadata = {
     title: "Claim a Business"
@@ -8,11 +9,7 @@ const metadata: Metadata = {
 
 function Page() {
     return (
-        <div>
-            <h1>
-                Claim a Business
-            </h1>
-        </div>
+        notFound()
     );
 }
 
