@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import {CookiesProvider} from 'next-client-cookies/server';
+// import {CookiesProvider} from 'next-client-cookies/server';
 
 import UserForm from '@/app/ui/components/general/user-form';
 
@@ -19,9 +19,9 @@ function Page() {
                     </div>
 
                     <div className="flex justify-center">
-                        <CookiesProvider>
+                        {/*<CookiesProvider>*/}
                             <UserForm requireAll={true}/>
-                        </CookiesProvider>
+                        {/*</CookiesProvider>*/}
                     </div>
                 </div>
             </div>
