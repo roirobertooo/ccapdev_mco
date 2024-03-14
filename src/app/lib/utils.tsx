@@ -97,4 +97,22 @@ const postData = (postString: string) => {
         });
 };
 
-export {useFetchData, TruncateText, formatDateToLocal, formatTime, postData};
+const putData = (putString: string) => {
+    fetch(putString, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .catch(error => {
+            console.error(error);
+        });
+};
+
+export {useFetchData, TruncateText, formatDateToLocal, formatTime, postData, putData};
