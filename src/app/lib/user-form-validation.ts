@@ -54,22 +54,6 @@ function ValidateForm(userForm: UserForm) {
         }
     }
 
-    if (user && name !== user.name) {
-        postData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=name&updateValues=${name}`);
-    }
-
-    if (user && username !== user.username) {
-        postData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=username&updateValues=${username}`);
-    }
-
-    if (password !== "") {
-        postData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=password&updateValues=${password}`);
-    }
-
-    if (user && description !== user.description) {
-        postData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=description&updateValues=${description}`);
-    }
-
     return name !== user?.name || username !== user?.username || password !== "" || description !== user?.description;
 }
 

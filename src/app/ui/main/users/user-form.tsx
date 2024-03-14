@@ -3,7 +3,7 @@
 import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
 
-import {useFetchData} from '@/app/lib/utils';
+import {postData, useFetchData} from '@/app/lib/utils';
 import {UserAccount} from '@/app/lib/definitions';
 import validateForm from '@/app/lib/user-form-validation';
 
@@ -52,6 +52,22 @@ function UserForm({userId}: { userId: string }) {
         const formValidation = validateForm(userForm);
 
         if (formValidation === true) {
+            if (user && name !== user.name) {
+                postData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=name&updateValues=${name}`);
+            }
+
+            if (user && username !== user.username) {
+                postData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=username&updateValues=${username}`);
+            }
+
+            if (password !== "") {
+                postData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=password&updateValues=${password}`);
+            }
+
+            if (user && description !== user.description) {
+                postData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=description&updateValues=${description}`);
+            }
+
             alert("Success! Your changes were saved.");
         } else if (formValidation === false) {
             alert("No changes were detected in the form.");
