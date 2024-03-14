@@ -14,7 +14,7 @@ function middleware(request: NextRequest) {
         return Response.redirect(new URL("/", request.url));
     }
 
-    if (!currentUser && (request.nextUrl.pathname.endsWith("/settings"))) {
+    if (!currentUser && (request.nextUrl.href.endsWith("/settings") && request.nextUrl.pathname.endsWith("/settings"))) {
         return Response.redirect(new URL("/", request.url));
     }
 }
