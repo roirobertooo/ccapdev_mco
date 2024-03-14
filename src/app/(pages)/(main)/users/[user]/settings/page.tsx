@@ -1,5 +1,6 @@
 import {cookies} from 'next/headers';
 import {notFound} from 'next/navigation';
+import {CookiesProvider} from 'next-client-cookies/server';
 
 import UserForm from '@/app/ui/components/general/user-form';
 
@@ -16,7 +17,9 @@ function Page({params}: { params: { user: string } }) {
                 Settings
             </h1>
 
-            <UserForm requireAll={false}/>
+            <CookiesProvider>
+                <UserForm requireAll={false}/>
+            </CookiesProvider>
         </div>
     );
 }
