@@ -1,7 +1,5 @@
 import React from 'react';
 
-import uploadImage from '@/app/lib/create-asset';
-
 interface AvatarPreviewProps {
     onAvatarChange: (avatar: string | null) => void;
     isRequired?: boolean;
@@ -14,23 +12,7 @@ const AvatarPreview: React.FC<AvatarPreviewProps> = ({onAvatarChange, isRequired
             const reader = new FileReader();
 
             reader.onload = (event) => {
-                if (upload != true) {
-                    onAvatarChange(event.target?.result as string);
-                } else { // TODO: In progress
-                    if (e.target.files === null) return;
-                    const imageBlob = new Blob([e.target.files[0]], {type: e.target.files[0].type});
-
-                    const tempImageUrl = URL.createObjectURL(imageBlob);
-
-                    const asset = {
-                        title: "avatar",
-                        path: tempImageUrl
-                    }
-
-                    const imageUrl = uploadImage(asset);
-
-                    onAvatarChange(imageUrl);
-                }
+                // TODO: onAvatarChange(event.target?.result as string);
             };
 
             reader.readAsDataURL(e.target.files[0]);
