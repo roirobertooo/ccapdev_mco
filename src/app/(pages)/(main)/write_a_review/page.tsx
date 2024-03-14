@@ -6,7 +6,7 @@ function Page() {
     return (
         <div className="w-2/3 mx-auto mt-10">
             <h1 className="font-bold text-2xl mb-10">
-                What&#39;s on your mind?
+                Write a Review
             </h1>
 
             <Form/>
