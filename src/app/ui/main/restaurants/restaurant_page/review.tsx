@@ -112,7 +112,7 @@ function ReviewBody({review}: { review: Review }) {
     );
 }
 
-const Review: React.FC<ReviewProps> = ({review}) => {
+const ReviewEntry: React.FC<ReviewProps> = ({review}) => {
     const userFetchString = `/api/get?collectionName=user_accounts&findKeys=_id&findValues=${review.user_id}`;
     const [userData, error] = useFetchData<UserAccount[]>(userFetchString);
     const user = userData ? userData[0] : null;
@@ -153,4 +153,4 @@ const Review: React.FC<ReviewProps> = ({review}) => {
     );
 }
 
-export default Review;
+export default ReviewEntry;
