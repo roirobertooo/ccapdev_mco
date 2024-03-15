@@ -42,7 +42,7 @@ function ReviewHeader({review}: { review: Review }) {
             <div className="flex flex-col items-end">
                 <Rating rating={review.rating} includeNumber={false} count={-1}/>
 
-                <Link href={"#"}
+                <Link href={`/restaurants/${restaurant ? restaurant._id : "#"}`}
                       className="mt-1.5 hover:underline text-blue-700 font-medium mr-1.5">
                     {restaurant && restaurant.name}
                 </Link>
