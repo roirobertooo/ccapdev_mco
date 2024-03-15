@@ -63,6 +63,8 @@ function UserForm({requireAll}: { requireAll: boolean }) {
         const formValidation = validateForm(userForm);
 
         if (formValidation === true) {
+            setUsername(username.toLowerCase());
+
             if (requireAll) {
                 putData(`/api/put?collectionName=user_accounts&putKeys=name,username,password,avatar_url,description&putValues=${name},${username},${password},${avatarUrl},${description}`);
 
