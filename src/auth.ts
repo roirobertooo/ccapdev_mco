@@ -12,6 +12,7 @@ const {auth, signIn, signOut} = NextAuth({
     providers: [Credentials({
         async authorize(credentials, req) {
             const rememberMe = credentials.remember_me;
+            const username = (credentials.username as string).toLowerCase();
 
             const client = await clientPromise;
             const db = client.db();
@@ -20,7 +21,7 @@ const {auth, signIn, signOut} = NextAuth({
 
             users = await db
                 .collection("user_accounts")
-                .find({username: credentials.username, password: credentials.password})
+                .find({username: username, password: credentials.password})
                 .toArray();
 
             if (users.length === 1) {
