@@ -1,7 +1,9 @@
 import React, {MouseEventHandler, useEffect, useState} from 'react';
+import Link from 'next/link';
 import {useCookies} from 'next-client-cookies';
 
-import {Review} from '@/app/lib/definitions';
+import {useFetchData} from '@/app/lib/utils';
+import {Review, UserAccount} from '@/app/lib/definitions';
 
 import ReviewImagesModal from './review_images_modal/review-images-modal';
 
@@ -12,6 +14,10 @@ interface ReviewFooterProps {
 
 function ReviewFooter({review, classOpts}: ReviewFooterProps) {
     const currentUser = useCookies().get("currentUser");
+
+    const fetchString = `/api/get?collectionName=user_accounts&findKeys=_id&findValues=${currentUser}`;
+    const [userData, userError] = useFetchData<UserAccount[]>(fetchString);
+    const user = userData ? userData[0] : null;
 
     const [likes, setLikes] = useState<number>();
     const [dislikes, setDislikes] = useState<number>();
@@ -91,11 +97,18 @@ function ReviewFooter({review, classOpts}: ReviewFooterProps) {
 
     return (
         <div className={`flex flex-row items-center justify-around ${classOpts}`}>
-            {review.review_media_url.length > 0 &&
-                <div className="ml-2">
-                    <ReviewImagesModal review={review}/>
-                </div>
-            }
+            <div>
+                {review.review_media_url.length > 0 &&
+                    <div className="ml-2">
+                        <ReviewImagesModal review={review}/>
+                    </div>
+                }
+                {user && (user.restaurant_owned === review.restaurant_id) &&
+                    <Link href={"#"} className="font-medium hover:underline text-blue-600">
+                        Reply as owner
+                    </Link>
+                }
+            </div>
 
             <div className="flex flex-row justify-end items-center gap-2 ml-auto">
                 <button onClick={handleLikeClick}
