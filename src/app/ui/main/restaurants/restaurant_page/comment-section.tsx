@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import {useFetchData, TruncateText, formatDateToLocal} from '@/app/lib/utils';
-import {UserAccount, Comment} from '@/app/lib/definitions';
+import {formatDateToLocal, TruncateText, useFetchData} from '@/app/lib/utils';
+import {Comment, UserAccount} from '@/app/lib/definitions';
 
 interface CommentSectionProps {
     comment: Comment;
@@ -17,13 +17,14 @@ function CommentSection({comment}: CommentSectionProps) {
         comment && owner ? (
             <div className="px-2 pt-4">
                 <div className="flex flex-row gap-2 items-center">
-                    <Link href={"#"}>
+                    <Link href={`/users/${owner._id}`}>
                         <Image src={owner.avatar_url} alt="" width={50} height={50}
                                className="rounded-full border border-1 unselectable"/>
                     </Link>
 
                     <div>
-                        <Link href={"#"} className="hover:underline font-bold">{owner.name}</Link>
+                        <Link href={`/users/${owner._id}`}
+                              className="hover:underline font-bold">{owner.name}</Link>
                         <p className="text-sm text-gray-500">{formatDateToLocal(comment.date)}</p>
                     </div>
                 </div>
