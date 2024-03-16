@@ -12,6 +12,8 @@ import {UserAccount} from '@/app/lib/definitions';
 import BusinessDropdown from './business-dropdown';
 import OutsideClickHandler from '@/app/ui/components/interactivity/outside-click-handler';
 
+const bcrypt = require('bcryptjs');
+
 function Navbar() {
     const currentUser = useCookies().get("currentUser");
 
@@ -24,6 +26,18 @@ function Navbar() {
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
     };
+
+    console.log("pb05: ", bcrypt.hashSync("pb05", 10));
+    console.log("ms01: ", bcrypt.hashSync("ms01", 10));
+    console.log("bh06: ", bcrypt.hashSync("bh06", 10));
+    console.log("nf09: ", bcrypt.hashSync("nf09", 10));
+    console.log("rs00: ", bcrypt.hashSync("rs00", 10));
+    console.log("mm02: ", bcrypt.hashSync("mm02", 10));
+    console.log("pm03: ", bcrypt.hashSync("pm03", 10));
+    console.log("ik04: ", bcrypt.hashSync("ik04", 10));
+    console.log("tc07: ", bcrypt.hashSync("tc07", 10));
+    console.log("hs08: ", bcrypt.hashSync("hs08", 10));
+    console.log("pb05: ", bcrypt.hashSync("pb05", 10));
 
     return (
         <div className="w-2/3 mx-auto m-3">
