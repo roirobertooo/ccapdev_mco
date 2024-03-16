@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {redirect} from 'next/navigation';
 
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 
 import {postData, putData, useFetchData} from '@/app/lib/utils';
 import {UserAccount} from '@/app/lib/definitions';
@@ -46,10 +46,8 @@ function UserForm({requireAll}: { requireAll: boolean }) {
         }
     }, [user]);
 
-    bcrypt.hash(password, 10, function (err, hash) {
-        // Store hash in your password DB.
-        console.log(hash)
-    });
+    const ashed = bcryptjs.hashSync(password, 10);
+    console.log(ashed)
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
