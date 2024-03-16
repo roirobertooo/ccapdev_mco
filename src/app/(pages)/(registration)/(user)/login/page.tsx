@@ -40,7 +40,7 @@ function Page() {
                 </h2>
             </div>
 
-            <div className={`${errorMessage ? "" : "mt-[42px]"} sm:mx-auto sm:w-full sm:max-w-sm`}>
+            <div className={`sm:mx-auto sm:w-full sm:max-w-sm`}>
                 <form className="space-y-6" action={dispatch}>
                     <div className="flex justify-center">
                         {errorMessage &&
