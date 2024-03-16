@@ -6,14 +6,18 @@ import {UserAccount, Restaurant} from '@/app/lib/definitions';
 import Loading from '@/app/ui/loading';
 
 function Form({userId}: { userId: string }) {
+    const usersfetchString = `/api/get?collectionName=user_accounts&findKeys=_id&findValue=${userId}`;
+    const [usersData, usersDataError] = useFetchData<UserAccount[]>(usersfetchString);
+    const user = usersData ? usersData[0] : null;
+
     const [restaurant, setRestaurant] = useState("");
     const [rating, setRating] = useState(5);
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const [images, setImages] = useState<FileList | null>(null);
 
-    const fetchString = "/api/get?collectionName=restaurants&sortKeys=name&sortOrders=asc";
-    const [restaurants, error] = useFetchData<Restaurant[]>(fetchString);
+    const restaurantsFetchString = "/api/get?collectionName=restaurants&sortKeys=name&sortOrders=asc";
+    const [restaurants, restaurantsError] = useFetchData<Restaurant[]>(restaurantsFetchString);
 
     const date = new Date();
     const year = date.getFullYear();
@@ -45,10 +49,6 @@ function Form({userId}: { userId: string }) {
         // }
 
         const reviewId = putData(`/api/put?collectionName=reviews&putKeys=user_id,restaurant_id,rating,date,review_title,review_body&putValues=${userId},${restaurant},${rating},${formattedDate},${title},${body}`);
-
-        const fetchString = `/api/get?collectionName=user_accounts&findKeys=_id&findValue=${userId}`;
-        const [usersData, error] = useFetchData<UserAccount[]>(fetchString);
-        const user = usersData ? usersData[0] : null;
 
         await putData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=review_count,reviews&updateValues=${user != undefined && user?.review_count + 1},${reviewId}`)
 
