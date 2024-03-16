@@ -31,7 +31,7 @@ function Page() {
     const [errorMessage, dispatch] = useFormState(authenticate, undefined);
 
     return (
-        <div className="flex flex-1 flex-col justify-center min-h-full px-6 py-12 lg:px-8 -mt-14">
+        <div className="flex flex-1 flex-col justify-center min-h-full px-6 py-12 lg:px-8 -mt-28">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm mt-36">
                 <Image className="mx-auto h-10 w-auto unselectable" src="/logo.png" width={40} height={40} alt="Logo"
                        priority/>
