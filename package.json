@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
-    "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "clsx": "^2.1.0",
     "contentful-management": "^11.23.0",
