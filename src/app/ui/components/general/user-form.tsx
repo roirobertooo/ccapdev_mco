@@ -27,7 +27,7 @@ function UserForm({requireAll}: { requireAll: boolean }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [repeatPassword, setRepeatPassword] = useState("");
-    const [avatarUrl, setAvatarUrl] = useState<string | null>("/signup/avatar.png");
+    const [avatarUrl, setAvatarUrl] = useState<string | null>("https://images.ctfassets.net/pof3zafcks92/7xgkuTduj39aCndD5uxtE/c469719fbf9bb3dce613771b24efa2c8/avatar.png");
     const [description, setDescription] = useState("");
 
     // General, for both editing and signup

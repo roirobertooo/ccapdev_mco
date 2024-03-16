@@ -12,7 +12,8 @@ const AvatarPreview: React.FC<AvatarPreviewProps> = ({onAvatarChange, isRequired
             const reader = new FileReader();
 
             reader.onload = (event) => {
-                // TODO: onAvatarChange(event.target?.result as string);
+                // TODO: do image upload
+                onAvatarChange(event.target?.result as string);
             };
 
             reader.readAsDataURL(e.target.files[0]);
