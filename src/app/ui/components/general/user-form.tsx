@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {redirect} from 'next/navigation';
 
-const bcryptjs = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 
 import {postData, putData, useFetchData} from '@/app/lib/utils';
 import {UserAccount} from '@/app/lib/definitions';
@@ -46,8 +46,9 @@ function UserForm({requireAll}: { requireAll: boolean }) {
         }
     }, [user]);
 
-    const ashed = bcryptjs.hashSync(password, 10);
+    const ashed = bcrypt.hashSync(password, 10);
     console.log(ashed)
+    console.log(bcrypt.compareSync("not_bacon", hash))
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
