@@ -54,7 +54,7 @@ function Page({params}: { params: { user: string } }) {
                         : <></>
                     }
                 </div>
-                <div className="flex flex-col items-center w-1/2 mx-auto pt-5">
+                <div className="flex flex-col items-center w-1/2 mx-auto pt-5 mb-20">
                     {reviewsData && reviewsData.length === 0 ?
                         <div className="w-2/3">
                             <p className="text-center w-full text-md font-medium italic mb-5 border-[1px] p-4 rounded-md border-gray-500">
