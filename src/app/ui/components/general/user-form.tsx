@@ -6,6 +6,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {redirect} from 'next/navigation';
 
+const bcrypt = require('bcrypt');
+
 import {postData, putData, useFetchData} from '@/app/lib/utils';
 import {UserAccount} from '@/app/lib/definitions';
 import validateForm from '@/app/lib/user-form-validation';
@@ -43,6 +45,11 @@ function UserForm({requireAll}: { requireAll: boolean }) {
             setDescription(user.description);
         }
     }, [user]);
+
+    bcrypt.hash(password, 10, function (err, hash) {
+        // Store hash in your password DB.
+        console.log(hash)
+    });
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
