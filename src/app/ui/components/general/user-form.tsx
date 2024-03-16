@@ -65,13 +65,11 @@ function UserForm({requireAll}: { requireAll: boolean }) {
         const formValidation = validateForm(userForm);
 
         if (formValidation === true) {
-            setUsername(username.toLowerCase());
-            console.log(username);
-
+            const loweredUsername = username.toLowerCase();
             const hashedPassword = bcrypt.hashSync(password, 10);
 
             if (requireAll) {
-                putData(`/api/put?collectionName=user_accounts&putKeys=name,username,password,avatar_url,description&putValues=${name},${username},${hashedPassword},${avatarUrl},${description}`);
+                putData(`/api/put?collectionName=user_accounts&putKeys=name,username,password,avatar_url,description&putValues=${name},${loweredUsername},${hashedPassword},${avatarUrl},${description}`);
 
                 alert("Success! Your account has been created.");
 
@@ -82,7 +80,7 @@ function UserForm({requireAll}: { requireAll: boolean }) {
                 }
 
                 if (user && username !== user.username) {
-                    postData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=username&updateValues=${username}`);
+                    postData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=username&updateValues=${loweredUsername}`);
                 }
 
                 if (password !== "") {
