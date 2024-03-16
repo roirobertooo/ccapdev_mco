@@ -5,7 +5,7 @@ import {useCookies} from 'next-client-cookies';
 import Image from 'next/image';
 import Link from 'next/link';
 import {redirect} from 'next/navigation';
-import bcrypt from 'bcryptjs';
+import bcryptjs from 'bcryptjs';
 
 
 import {postData, putData, useFetchData} from '@/app/lib/utils';
@@ -67,7 +67,7 @@ function UserForm({requireAll}: { requireAll: boolean }) {
         if (formValidation === true) {
             setUsername(username.toLowerCase());
 
-            const hashedPassword = bcrypt.hashSync(password, 10);
+            const hashedPassword = bcryptjs.hashSync(password, 10);
 
             if (requireAll) {
                 putData(`/api/put?collectionName=user_accounts&putKeys=name,username,password,avatar_url,description&putValues=${name},${username},${hashedPassword},${avatarUrl},${description}`);
