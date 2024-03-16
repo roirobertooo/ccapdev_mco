@@ -6,7 +6,7 @@ import {UserAccount, Restaurant} from '@/app/lib/definitions';
 import Loading from '@/app/ui/loading';
 
 function Form({userId}: { userId: string }) {
-    const usersfetchString = `/api/get?collectionName=user_accounts&findKeys=_id&findValue=${userId}`;
+    const usersfetchString = `/api/get?collectionName=user_accounts&findKeys=_id&findValues=${userId}`;
     const [usersData, usersDataError] = useFetchData<UserAccount[]>(usersfetchString);
     const user = usersData ? usersData[0] : null;
 
@@ -50,7 +50,6 @@ function Form({userId}: { userId: string }) {
 
         const reviewId = putData(`/api/put?collectionName=reviews&putKeys=user_id,restaurant_id,rating,date,review_title,review_body&putValues=${userId},${restaurant},${rating},${formattedDate},${title},${body}`);
         console.log(reviewId);
-
 
         if (user) {
             await putData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=review_count,reviews&updateValues=${user?.review_count + 1},${reviewId}`)
