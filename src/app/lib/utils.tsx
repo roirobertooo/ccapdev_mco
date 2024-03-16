@@ -98,8 +98,8 @@ const postData = (postString: string) => {
         });
 };
 
-const putData = (putString: string) => {
-    fetch(putString, {
+const putData = async (putString: string) => {
+    return fetch(putString, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -110,6 +110,10 @@ const putData = (putString: string) => {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             return response.json();
+        })
+        .then(data => {
+            // Assuming the server returns a JSON object with an 'id' property
+            return data._id;
         })
         .catch(error => {
             console.error(error);

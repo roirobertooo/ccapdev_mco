@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import {putData, useFetchData} from '@/app/lib/utils';
-import {Restaurant} from '@/app/lib/definitions';
+import {UserAccount, Restaurant} from '@/app/lib/definitions';
 
 import Loading from '@/app/ui/loading';
 
@@ -29,7 +29,7 @@ function Form({userId}: { userId: string }) {
         setImages(e.target.files);
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         if (!restaurant) {
@@ -44,7 +44,13 @@ function Form({userId}: { userId: string }) {
         //     }
         // }
 
-        putData(`/api/put?collectionName=reviews&putKeys=user_id,restaurant_id,rating,date,review_title,review_body&putValues=${userId},${restaurant},${rating},${formattedDate},${title},${body}`);
+        const reviewId = putData(`/api/put?collectionName=reviews&putKeys=user_id,restaurant_id,rating,date,review_title,review_body&putValues=${userId},${restaurant},${rating},${formattedDate},${title},${body}`);
+
+        const fetchString = `/api/get?collectionName=user_accounts&findKeys=_id&findValue=${userId}`;
+        const [usersData, error] = useFetchData<UserAccount[]>(fetchString);
+        const user = usersData ? usersData[0] : null;
+
+        await putData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=review_count,reviews&updateValues=${user != undefined && user?.review_count + 1},${reviewId}`)
 
         alert("Success! Your review has been posted!");
 
