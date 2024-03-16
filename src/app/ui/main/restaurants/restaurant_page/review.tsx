@@ -94,11 +94,12 @@ function ReviewBody({review}: { review: Review }) {
     return (
         <div className="px-2 pt-4 mb-1">
             {!isRestaurantRoute ? (
-                <Link href={`/restaurants/${review.restaurant_id}#${review._id}`}>
-                    <p className="font-bold text-xl mb-2 hover:underline cursor-pointer">
+                <p className="font-bold text-xl mb-2">
+                    <Link href={`/restaurants/${review.restaurant_id}#${review._id}`}
+                          className="hover:underline cursor-pointer">
                         {review.review_title}
-                    </p>
-                </Link>
+                    </Link>
+                </p>
             ) : (
                 <p className="font-bold text-xl mb-2">
                     {review.review_title}
