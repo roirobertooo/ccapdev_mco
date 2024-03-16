@@ -7,6 +7,8 @@ import {UserAccount} from '@/app/lib/definitions';
 
 import {authConfig} from './auth.config';
 
+const bcrypt = require('bcryptjs');
+
 const {auth, signIn, signOut} = NextAuth({
     ...authConfig,
     providers: [Credentials({
@@ -21,12 +23,16 @@ const {auth, signIn, signOut} = NextAuth({
 
             users = await db
                 .collection("user_accounts")
-                .find({username: username, password: credentials.password})
+                .find({username: username})
                 .toArray();
 
-            if (users.length === 1) {
-                const user = users[0] as UserAccount;
+            if (!users) return null;
 
+            const user = users[0] as UserAccount;
+
+            const passwordMatch = bcrypt.compareSync(credentials.password, user.password);
+
+            if (passwordMatch) {
                 console.log("Valid credentials");
 
                 cookies().set({
