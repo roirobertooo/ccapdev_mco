@@ -47,7 +47,7 @@ const Reviews: React.FC<HeaderProps> = ({restaurantId}) => {
                 </select>
             </div>
 
-            <div>
+            <div className="mb-20">
                 {reviews?.map(review => (
                     <ReviewEntry key={review._id} review={review}/>
                 ))}
