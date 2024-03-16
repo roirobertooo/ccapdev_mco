@@ -48,7 +48,7 @@ function UserForm({requireAll}: { requireAll: boolean }) {
 
     const ashed = bcrypt.hashSync(password, 10);
     console.log(ashed)
-    console.log(bcrypt.compareSync("not_bacon", hash))
+    console.log(bcrypt.compareSync("not_bacon", ashed))
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
