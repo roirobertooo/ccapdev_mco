@@ -12,6 +12,11 @@ import {UserAccount} from '@/app/lib/definitions';
 import BusinessDropdown from './business-dropdown';
 import OutsideClickHandler from '@/app/ui/components/interactivity/outside-click-handler';
 
+
+import LoginModal from "@/app/ui/components/general/login-modal";
+
+
+
 function Navbar() {
     const currentUser = useCookies().get("currentUser");
 
@@ -36,6 +41,8 @@ function Navbar() {
                         </div>
                     </Link>
                 </div>
+
+                {!currentUser && <LoginModal/>}
 
                 <div className="flex gap-20">
                     <Link href="/about_us"
