@@ -69,7 +69,7 @@ function UserForm({requireAll}: { requireAll: boolean }) {
             const hashedPassword = bcrypt.hashSync(password, 10);
 
             if (requireAll) {
-                putData(`/api/put?collectionName=user_accounts&putKeys=name,username,password,avatar_url,description&putValues=${name},${loweredUsername},${hashedPassword},"https://images.ctfassets.net/pof3zafcks92/7xgkuTduj39aCndD5uxtE/c469719fbf9bb3dce613771b24efa2c8/avatar.png",${description}`);
+                putData(`/api/put?collectionName=user_accounts&putKeys=name,username,password,avatar_url,description&putValues=${name},${loweredUsername},${hashedPassword},https://images.ctfassets.net/pof3zafcks92/7xgkuTduj39aCndD5uxtE/c469719fbf9bb3dce613771b24efa2c8/avatar.png,${description}`);
 
                 alert("Success! Your account has been created.");
 
