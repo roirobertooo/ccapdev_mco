@@ -48,16 +48,7 @@ function Form({userId}: { userId: string }) {
         //     }
         // }
 
-        let reviewId;
-
-        putData(`/api/put?collectionName=reviews&putKeys=user_id,restaurant_id,rating,date,review_title,review_body&putValues=${userId},${restaurant},${rating},${formattedDate},${title},${body}`)
-            .then(id => {
-                console.log(id);
-                reviewId = id;
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        const reviewId = putData(`/api/put?collectionName=reviews&putKeys=user_id,restaurant_id,rating,date,review_title,review_body&putValues=${userId},${restaurant},${rating},${formattedDate},${title},${body}`);
 
         if (user) {
             await putData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=review_count,reviews&updateValues=${user?.review_count + 1},${reviewId}`)
