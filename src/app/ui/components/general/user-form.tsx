@@ -5,8 +5,8 @@ import {useCookies} from 'next-client-cookies';
 import Image from 'next/image';
 import Link from 'next/link';
 import {redirect} from 'next/navigation';
+import bcrypt from 'bcryptjs';
 
-const bcrypt = require('bcryptjs');
 
 import {postData, putData, useFetchData} from '@/app/lib/utils';
 import {UserAccount} from '@/app/lib/definitions';
@@ -46,10 +46,6 @@ function UserForm({requireAll}: { requireAll: boolean }) {
         }
     }, [user]);
 
-    const ashed = bcrypt.hashSync(password, 10);
-    console.log(ashed)
-    console.log(bcrypt.compareSync("not_bacon", ashed))
-
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
 
@@ -71,8 +67,10 @@ function UserForm({requireAll}: { requireAll: boolean }) {
         if (formValidation === true) {
             setUsername(username.toLowerCase());
 
+            const hashedPassword = bcrypt.hashSync(password, 10);
+
             if (requireAll) {
-                putData(`/api/put?collectionName=user_accounts&putKeys=name,username,password,avatar_url,description&putValues=${name},${username},${password},${avatarUrl},${description}`);
+                putData(`/api/put?collectionName=user_accounts&putKeys=name,username,password,avatar_url,description&putValues=${name},${username},${hashedPassword},${avatarUrl},${description}`);
 
                 alert("Success! Your account has been created.");
 
@@ -87,7 +85,7 @@ function UserForm({requireAll}: { requireAll: boolean }) {
                 }
 
                 if (password !== "") {
-                    postData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=password&updateValues=${password}`);
+                    postData(`/api/post?collectionName=user_accounts&findKeys=_id&findValues=${userId}&updateKeys=password&updateValues=${hashedPassword}`);
 
                     setPassword("");
                     setRepeatPassword("");
