@@ -113,7 +113,7 @@ const putData = async (putString: string) => {
         })
         .then(data => {
             // Assuming the server returns a JSON object with an 'id' property
-            return data;
+            return data.insertedId;
         })
         .catch(error => {
             console.error(error);
