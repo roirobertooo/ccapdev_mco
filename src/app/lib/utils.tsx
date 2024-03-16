@@ -39,6 +39,7 @@ const TruncateText = ({text, maxChar, includeQuotes}: {
             {text.length > maxChar && (
                 <span onClick={toggleTruncate} className="cursor-pointer">
                     {isTruncated && <span>...</span>}
+                    {includeQuotes && <span>&quot;</span>}
                     <span> </span>
 
                     <span className="text-blue-600 hover:underline">
@@ -46,7 +47,7 @@ const TruncateText = ({text, maxChar, includeQuotes}: {
                     </span>
                 </span>
             )}
-            {includeQuotes && <span>&quot;</span>}
+            {text.length <= maxChar && includeQuotes && <span>&quot;</span>}
         </p>
     );
 };
