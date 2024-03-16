@@ -16,7 +16,6 @@ import OutsideClickHandler from '@/app/ui/components/interactivity/outside-click
 import LoginModal from "@/app/ui/components/general/login-modal";
 
 
-
 function Navbar() {
     const currentUser = useCookies().get("currentUser");
 
@@ -28,6 +27,12 @@ function Navbar() {
 
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
+    };
+
+    const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+
+    const toggleLoginModal = () => {
+        setIsLoginModalOpen(!isLoginModalOpen);
     };
 
     return (
@@ -42,8 +47,6 @@ function Navbar() {
                     </Link>
                 </div>
 
-                {!currentUser && <LoginModal/>}
-
                 <div className="flex gap-20">
                     <Link href="/about_us"
                           className="font-bold text-lg hover:underline underline-offset-8">About Us</Link>
@@ -52,10 +55,18 @@ function Navbar() {
                 </div>
 
                 <div className="flex gap-10 items-center">
-                    <Link href="/write_a_review"
-                          className="font-medium text-sm hover:underline underline-offset-8">
-                        Write a Review
-                    </Link>
+                    {!currentUser ?
+                        <>
+                            <button onClick={toggleLoginModal}>Write a Review</button>
+                            {isLoginModalOpen && <LoginModal/>}
+                        </>
+                        :
+                        <Link href="/write_a_review"
+                              className="font-medium text-sm hover:underline underline-offset-8">
+                            Write a Review
+                        </Link>
+                    }
+
 
                     <BusinessDropdown/>
 
