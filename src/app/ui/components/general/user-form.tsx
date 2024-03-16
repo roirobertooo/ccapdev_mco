@@ -66,6 +66,7 @@ function UserForm({requireAll}: { requireAll: boolean }) {
 
         if (formValidation === true) {
             setUsername(username.toLowerCase());
+            console.log(username);
 
             const hashedPassword = bcrypt.hashSync(password, 10);
 
